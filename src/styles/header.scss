@@ -1,0 +1,17 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    width: 100%;
+
+    .navItem {
+        cursor: pointer;
+
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    }
+}

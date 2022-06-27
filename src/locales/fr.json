@@ -1,5 +1,13 @@
 {
   "translation": {
+    "header": {
+      "home": "acceuil",
+      "resume": "cv",
+      "experience": "experience",
+      "education": "éducation",
+      "skills": "compétences",
+      "contact": "contact"
+    },
     "home": {
       "welcomeMsg": "Test message fr"
     }
