@@ -5,11 +5,13 @@ import '../styles/header.scss';
 
 function Header() {
   const { t } = useTranslation();
+  const URLPath = window.location.pathname?.split('/')[1];
 
   const navItems = [
     { label: t('header.home'), link: '/home' },
     {
       label: t('header.resume'),
+      pathRoot: 'resume',
       isDropdown: true,
       items: [
         { label: t('header.experience'), link: '/resume/experience' },
@@ -28,9 +30,15 @@ function Header() {
             key={`${item.label}`}
             className="navItem"
           >
-            <NavLink to={item.link || '/'} className={({ isActive }) => (isActive ? 'active' : null)}>
-              {item.label}
-            </NavLink>
+            {!item.isDropdown ? (
+              <NavLink to={item.link || '/'} className={({ isActive }) => (isActive ? 'active label' : 'label')}>
+                {item.label}
+              </NavLink>
+            ) : (
+              <div className={URLPath === item.pathRoot ? 'active label' : 'label'}>
+                {item.label}
+              </div>
+            )}
           </div>
         ))
       }
