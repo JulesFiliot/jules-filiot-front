@@ -7,16 +7,8 @@
     width: 100%;
 
     .navItem {
-        a {
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .label {
-            text-transform: uppercase;
-
-            &.active {
-                color: red;
-            }
-        }
+        cursor: pointer;
+        text-decoration: none;
+        text-transform: uppercase;
     }
 }

@@ -9,7 +9,10 @@
       "contact": "reach me"
     },
     "home": {
-      "welcomeMsg": "Test message en"
+      "welcomeMsg": "Test message en",
+      "fullView": {
+        "mainMessage": "Hello, I am Jules FILIOT!"
+      }
     }
   }
 }

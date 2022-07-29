@@ -9,7 +9,10 @@
       "contact": "contact"
     },
     "home": {
-      "welcomeMsg": "Test message fr"
+      "welcomeMsg": "Test message fr",
+      "fullView": {
+        "mainMessage": "Bonjour, je suis Jules FILIOT !"
+      }
     }
   }
 }

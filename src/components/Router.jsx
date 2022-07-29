@@ -7,14 +7,10 @@ import Home from './Home';
 function Router() {
   return (
     <Routes>
-      <Route exact path="/home" element={<Home />} />
-      <Route exact path="/resume/experience" element={<Home />} />
-      <Route exact path="/resume/education" element={<Home />} />
-      <Route exact path="/resume/skills" element={<Home />} />
-      <Route exact path="/reachme" element={<Home />} />
+      <Route exact path="/" element={<Home />} />
 
-      {/* redirect wrong URLs to /home */}
-      <Route path="*" element={<Navigate to="/home" />} />
+      {/* redirect wrong URLs to root */}
+      <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
 }
