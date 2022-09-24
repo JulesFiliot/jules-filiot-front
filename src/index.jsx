@@ -1,10 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import './styles/index.scss';
 import Router from './components/Router';
 import reportWebVitals from './reportWebVitals';
 import './i18n';
+
+import './fonts/Rubik/Rubik-Bold.ttf';
+import './fonts/Rubik/Rubik-BoldItalic.ttf';
+import './fonts/Rubik/Rubik-Italic.ttf';
+import './fonts/Rubik/Rubik-Regular.ttf';
+import './styles/index.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

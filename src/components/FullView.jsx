@@ -9,6 +9,16 @@ function FullView() {
   return (
     <div className="fullView">
       <h1 className="mainMessage">{t('home.fullView.mainMessage')}</h1>
+      <ul>
+        <li>{t('home.fullView.subMessage1')}</li>
+        <li>{t('home.fullView.subMessage2')}</li>
+      </ul>
+      <button
+        type="button"
+        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+      >
+        {t('home.fullView.buttonText')}
+      </button>
     </div>
   );
 }

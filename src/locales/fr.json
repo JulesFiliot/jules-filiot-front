@@ -9,9 +9,14 @@
       "contact": "contact"
     },
     "home": {
-      "welcomeMsg": "Test message fr",
       "fullView": {
-        "mainMessage": "Bonjour, je suis Jules FILIOT !"
+        "mainMessage": "Bonjour, je suis Jules FILIOT !",
+        "subMessage1": "Développeur logiciel passionné",
+        "subMessage2": "En recherche d'un stage de fin d'étude au Japon",
+        "buttonText": "Découvrir"
+      },
+      "resume": {
+        "experience": "Expérience"
       }
     }
   }

@@ -9,9 +9,14 @@
       "contact": "reach me"
     },
     "home": {
-      "welcomeMsg": "Test message en",
       "fullView": {
-        "mainMessage": "Hello, I am Jules FILIOT!"
+        "mainMessage": "Hello, I am Jules FILIOT!",
+        "subMessage1": "Pasionnated software engineer student",
+        "subMessage2": "Looking for an intership in Japan",
+        "buttonText": "Discover"
+      },
+      "resume": {
+        "experience": "Experience"
       }
     }
   }

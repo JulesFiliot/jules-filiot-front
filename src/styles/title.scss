@@ -1,0 +1,29 @@
+@use './variables.scss' as *;
+
+.titleContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 50px;
+  margin-right: 50px;
+
+  .leftLine, .rightLine {
+    height: 5px;
+    border-radius: 5px;
+  }
+  .leftLine {
+    max-width: 10vw;
+    width: 100%;
+  }
+  .rightLine {
+    width: 100%;
+  }
+  .text {
+    width: auto;
+    margin: 0px 15px 0px 15px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $font-bold;
+    font-size: $font-size-big;
+  }
+}
