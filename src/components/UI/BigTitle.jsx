@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import '../../styles/title.scss';
+import '../../styles/UI/bigTitle.scss';
 
-function Title({
+function BigTitle({
   text, textColor, color, marginTop, marginBottom,
 }) {
   return (
@@ -15,19 +15,19 @@ function Title({
   );
 }
 
-Title.propTypes = {
+BigTitle.propTypes = {
   text: PropTypes.string.isRequired,
   textColor: PropTypes.string,
   color: PropTypes.string,
-  marginTop: PropTypes.oneOfType(PropTypes.number, PropTypes.string),
-  marginBottom: PropTypes.oneOfType(PropTypes.number, PropTypes.string),
+  marginTop: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  marginBottom: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
 
-Title.defaultProps = {
+BigTitle.defaultProps = {
   textColor: '#000000',
   color: '#000000',
   marginTop: '0px',
   marginBottom: '0px',
 };
 
-export default Title;
+export default BigTitle;

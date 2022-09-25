@@ -1,0 +1,16 @@
+@use '../variables.scss' as *;
+
+.panelContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+
+  .timeStampsList {
+    display: flex;
+    flex-direction: column;
+  }
+  .timeStampDetails {
+    display: flex;
+    flex-direction: column;
+  }
+}
