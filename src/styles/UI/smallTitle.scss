@@ -6,20 +6,16 @@
   justify-content: flex-end;
 
   &.left {
-    // margin-right: 0px;
-    // margin-left: 50px;
     flex-direction: row-reverse;
   }
   &.right {
-    // margin-right: 50px;
-    // margin-left: 0px;
     flex-direction: row;
   }
 
   .line {
     height: 5px;
     border-radius: 5px;
-    width: 30vw;
+    width: 100%;
   }
   .text {
     width: auto;
@@ -35,6 +31,14 @@
     &.rightText {
       margin-left: 15px;
       margin-right: 0px;
+    }
+  }
+}
+
+@media (min-width: $sm-width) {
+  .smallTitleContainer {
+    .line {
+      width: 30vw;
     }
   }
 }

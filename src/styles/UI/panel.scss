@@ -2,12 +2,26 @@
 
 .panelContainer {
   display: flex;
-  flex-direction: row;
-  align-items: start;
+  flex-direction: column;
 
   .timeStampsList {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    flex-direction: row;
+    overflow-x: auto;
+
+    button {
+      padding: 7px 13px 7px 13px;
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px #868686 solid;
+      
+      span {
+        white-space: nowrap;
+        font-size: $font-size-regular;
+      }
+    }
   }
   .timeStampDetails {
     display: flex;
