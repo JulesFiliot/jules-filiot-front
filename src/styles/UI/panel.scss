@@ -1,0 +1,111 @@
+@use '../variables.scss' as *;
+
+.panelContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 350px;
+
+  .timeStampsList {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      height: 10px;
+      width: auto;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #aaaaaa44;
+    }
+    button {
+      cursor: pointer;
+      padding: 7px 20px 7px 20px;
+      min-width: 120px;
+      background-color: transparent;
+      border: none;
+      border-bottom: 3px #b1b1b1 solid;
+      transition: all 0.3s cubic-bezier(.17,.67,.83,.67);
+
+      &.selected {
+        border-bottom-color: $sub-color2;
+      }
+      span {
+        white-space: nowrap;
+        font-size: $font-size-regular;
+      }
+    }
+  }
+  .timeStampDetails {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+    .subtitle {
+      text-transform: capitalize;
+      font-size: $font-size-big;
+    }
+    .dates {
+      font-size: $font-size-small;
+    }
+    .description {
+      list-style-type: none;
+      padding-left: 0px;
+      
+      li {
+        padding-left: 25px;
+        margin-bottom: 10px;
+        position: relative;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          left: 0px;
+          border-bottom: 2px solid $sub-color2;
+          width: 15px;
+          margin-top: 13px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $lg-width) {
+  .panelContainer {
+    flex-direction: row;
+
+    .timeStampsList {
+      flex-direction: column;
+      width: 170px;
+
+      button {
+        border: none;
+        border-left: 3px #b1b1b1 solid;
+
+        &.selected {
+          border-left-color: $sub-color2;
+        }
+      }
+    }
+    .timeStampDetails {
+      margin-top: 0px;
+      max-width: 400px;
+      width: 100%;
+    }
+  }
+}
+@media (min-width: $xl-width) {
+  .panelContainer {
+    .timeStampDetails {
+      max-width: 570px;
+    }
+  }
+}
+@media (min-width: $xxl-width) {
+  .panelContainer {
+    .timeStampDetails {
+      max-width: 650px;
+    }
+  }
+}

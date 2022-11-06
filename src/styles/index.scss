@@ -1,13 +1,50 @@
-body {
+@use './variables.scss' as *;
+
+@font-face {
+  font-family: 'RubikRegular';
+  src: local('RubikRegular'),
+  url('../fonts/Rubik/Rubik-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'RubikBold';
+  src: local('RubikBold'),
+  url('../fonts/Rubik/Rubik-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'RubikItalic';
+  src: local('RubikItalic'),
+  url('../fonts/Rubik/Rubik-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'RubikBoldItalic';
+  src: local('RubikBoldItalic'),
+  url('../fonts/Rubik/Rubik-BoldItalic.ttf') format('truetype');
+}
+
+body, span {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'RubikRegular';
+  font-size: $font-size-regular;
+  overflow-x: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+// better scrollbar
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #aaaaaa;
+  border: 3px solid white;
+  border-radius: 10px;
 }

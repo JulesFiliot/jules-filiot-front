@@ -1,0 +1,23 @@
+{
+  "translation": {
+    "header": {
+      "home": "home",
+      "resume": "resume",
+      "experience": "experience",
+      "education": "education",
+      "skills": "skills",
+      "contact": "reach me"
+    },
+    "home": {
+      "fullView": {
+        "mainMessage": "Hello, I am Jules FILIOT!",
+        "subMessage1": "Pasionnated software engineer student",
+        "subMessage2": "Looking for an intership in Japan",
+        "buttonText": "Discover"
+      },
+      "resume": {
+        "experience": "Experience"
+      }
+    }
+  }
+}
