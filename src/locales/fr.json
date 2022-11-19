@@ -16,7 +16,8 @@
         "buttonText": "Découvrir"
       },
       "resume": {
-        "experience": "Expérience"
+        "experience": "Expérience",
+        "education": "Éducation"
       }
     }
   }
