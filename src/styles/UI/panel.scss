@@ -3,7 +3,9 @@
 .panelContainer {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   min-height: 350px;
+  width: 100%;
 
   .timeStampsList {
     width: 100%;
@@ -71,18 +73,35 @@
   }
 }
 
+@media (min-width: $sm-width) {
+  .panelContainer {
+    align-items: center;
+    .timeStampsList {
+      justify-content: center;
+    }
+    .timeStampDetails {
+      width: 500px;
+    }
+  }
+}
 @media (min-width: $lg-width) {
   .panelContainer {
     flex-direction: row;
+    align-items: unset;
+    justify-content: center;
 
     .timeStampsList {
       flex-direction: column;
+      justify-content: flex-start;
       width: 170px;
 
       button {
         border: none;
         border-left: 3px #b1b1b1 solid;
 
+        span {
+          white-space: unset;
+        }
         &.selected {
           border-left-color: $sub-color2;
         }
@@ -90,22 +109,20 @@
     }
     .timeStampDetails {
       margin-top: 0px;
-      max-width: 400px;
-      width: 100%;
     }
   }
 }
 @media (min-width: $xl-width) {
   .panelContainer {
     .timeStampDetails {
-      max-width: 570px;
+      width: 650px;
     }
   }
 }
 @media (min-width: $xxl-width) {
   .panelContainer {
     .timeStampDetails {
-      max-width: 650px;
+      width: 800px;
     }
   }
 }

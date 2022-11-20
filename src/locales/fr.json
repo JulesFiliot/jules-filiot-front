@@ -6,7 +6,9 @@
       "experience": "experience",
       "education": "éducation",
       "skills": "compétences",
-      "contact": "contact"
+      "contact": "contact",
+      "fr": "FR",
+      "en": "EN"
     },
     "home": {
       "fullView": {

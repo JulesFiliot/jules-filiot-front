@@ -10,16 +10,16 @@ import '../styles/home.scss';
 // const itImage1 = require('../images/it_minimalist_compressed.jpg');
 
 function Home() {
-  const { t, i18n } = useTranslation();
+  const { t/* , i18n */ } = useTranslation();
 
   return (
     <>
       <FullView />
       <Layout>
-        <div>
+        {/* <div>
           <button type="button" onClick={() => i18n.changeLanguage('fr')}>FR</button>
           <button type="button" onClick={() => i18n.changeLanguage('en')}>EN</button>
-        </div>
+        </div> */}
         <div className="section">
           <SmallTitle text={t('home.resume.experience')} marginBottom={20} left />
           <Panel
@@ -31,7 +31,7 @@ function Home() {
               ['Full stack development using React framework for JavaScript and Nest.js framework for Node.js', 'Web app maintenance', 'Development of new features'],
               ['Full stack plumber using React framework for JavaScript and Nest.js framework for Node.js', 'Web app maintenance', 'Development of new features'],
               ['Full stack firefighter using React framework for JavaScript and Nest.js framework for Node.js', 'Web app maintenance', 'Development of new features'],
-              ['Full stack cooker using React framework for JavaScript and Nest.js framework for Node.js', 'Web app maintenance', 'Development of new features'],
+              ['Full stack cooker', 'Web app maintenance', 'Development of new features'],
             ]}
           />
         </div>

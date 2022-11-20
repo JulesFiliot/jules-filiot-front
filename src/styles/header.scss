@@ -1,14 +1,31 @@
-.nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    column-gap: 10px;
-    width: 100%;
+@use './variables.scss' as *;
 
+.navContainer {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    border: solid 1px #000000;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
     .navItem {
         cursor: pointer;
         text-decoration: none;
         text-transform: uppercase;
+        padding: 15px;
+    }
+}
+
+@media (min-width: $sm-width) {
+    .nav .navItem {
+        &.first, &.langBtn {
+            margin-left: auto;
+        }
     }
 }

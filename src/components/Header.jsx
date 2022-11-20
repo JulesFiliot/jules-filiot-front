@@ -10,19 +10,31 @@ function Header() {
     { label: t('header.resume'), link: '/' },
     { label: t('header.contact'), link: '/' },
   ];
+  const languages = [
+    { label: t('header.fr'), key: 'fr' },
+    { label: t('header.en'), key: 'en' },
+  ];
 
   return (
-    <nav className="nav">
-      {
-        navItems.map((item) => (
+    <nav className="navContainer">
+      <div className="nav">
+        {
+        navItems.map((item, i) => (
           <div
             key={`${item.label}`}
-            className="navItem"
+            className={`navItem${i === 0 ? ' first' : ''}`}
           >
             {item.label}
           </div>
         ))
       }
+      </div>
+      <div
+        key={`${languages[0].key}`}
+        className="navItem langBtn"
+      >
+        {languages[0].label}
+      </div>
     </nav>
   );
 }
