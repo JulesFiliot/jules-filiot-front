@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import Button from './UI/Button';
 import '../styles/fullView.scss';
 
 // welcome view taking full screen on website load
@@ -13,12 +14,11 @@ function FullView() {
         <li>{t('home.fullView.subMessage1')}</li>
         <li>{t('home.fullView.subMessage2')}</li>
       </ul>
-      <button
-        type="button"
+      <Button
+        capitalize
+        label={t('home.fullView.buttonText')}
         onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-      >
-        {t('home.fullView.buttonText')}
-      </button>
+      />
     </div>
   );
 }

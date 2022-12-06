@@ -26,7 +26,7 @@
       min-width: 120px;
       background-color: transparent;
       border: none;
-      border-bottom: 3px #b1b1b1 solid;
+      border-bottom: 1px #b1b1b1 solid;
       transition: all 0.3s cubic-bezier(.17,.67,.83,.67);
 
       &.selected {
@@ -64,7 +64,7 @@
           display: inline-block;
           position: absolute;
           left: 0px;
-          border-bottom: 2px solid $sub-color2;
+          border-bottom: 1px solid $sub-color2;
           width: 15px;
           margin-top: 13px;
         }
@@ -97,7 +97,7 @@
 
       button {
         border: none;
-        border-left: 3px #b1b1b1 solid;
+        border-left: 1px #b1b1b1 solid;
 
         span {
           white-space: unset;
