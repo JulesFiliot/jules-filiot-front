@@ -15,10 +15,11 @@
   .line {
     display: none;
     height: 1px;
-    width: 30vw;
+    width: 50vw;
   }
   .text {
     width: auto;
+    white-space: nowrap;
     text-align: center;
     text-transform: uppercase;
     font-family: $font-regular;

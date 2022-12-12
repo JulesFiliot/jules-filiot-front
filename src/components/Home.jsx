@@ -51,11 +51,13 @@ function Home() {
         </div>
         <div className="section">
           <SmallTitle text={t('home.resume.topSkills')} marginBottom={20} left />
-          <ButtonsList data={[
-            { id: 1, title: 'React', details: 'Refined react skills for over a year and a half' },
-            { id: 2, title: 'NestJS', details: 'Refined nestjs skills for over a year and a half' },
-            { id: 3, title: 'css', details: 'Strong css knowledge with a many hours of experience. This text is very long for no reason, I just want to test my component so I have to write a very very veryyyyy long description to see how it behaves' },
-          ]}
+          <ButtonsList
+            capitalize
+            data={[
+              { id: 1, title: 'React', details: 'Refined react skills for over a year and a half' },
+              { id: 2, title: 'NestJS', details: 'Refined nestjs skills for over a year and a half Strong css knowledge with a many hours of experience. This text is very long for no reason, I just want to test my component so I have to write a very very veryyyyy long description to see how it behaves' },
+              { id: 3, title: 'css', details: 'Strong css knowledge with a many hours of experience. This text is very long for no reason, I just want to test my component so I have to write a very very veryyyyy long description to see how it behaves' },
+            ]}
           />
         </div>
 

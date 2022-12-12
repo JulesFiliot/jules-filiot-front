@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import '../../styles/UI/button.scss';
 
 function Button({
-  label, uppercase, lowercase, capitalize, onClick,
+  label, uppercase, lowercase, capitalize, onClick, onBlur,
 }) {
   return (
     <button
       className={`defaultButton${uppercase ? ' uppercase' : ''}${lowercase ? ' lowercase' : ''}${capitalize ? ' capitalize' : ''}`}
-      onClick={onClick}
+      onMouseDown={onClick}
+      onBlur={onBlur}
       type="button"
     >
       {label}
@@ -22,12 +23,14 @@ Button.propTypes = {
   lowercase: PropTypes.bool,
   capitalize: PropTypes.bool,
   onClick: PropTypes.func,
+  onBlur: PropTypes.func,
 };
 Button.defaultProps = {
   uppercase: false,
   lowercase: false,
   capitalize: false,
   onClick: null,
+  onBlur: null,
 };
 
 export default Button;
