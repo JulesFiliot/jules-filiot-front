@@ -19,7 +19,8 @@
       },
       "resume": {
         "experience": "Expérience",
-        "education": "Éducation"
+        "education": "Éducation",
+        "topSkills": "Principales compétences"
       }
     }
   }
