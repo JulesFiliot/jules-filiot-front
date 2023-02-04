@@ -32,6 +32,17 @@
       &.selected {
         border-bottom-color: $sub-color2;
       }
+      &:hover {
+        span {
+          text-decoration: line-through;
+          text-decoration-color: $sub-color2;
+        }
+      }
+      &.selected:hover {
+        span {
+          text-decoration: none;
+        }
+      }
       span {
         white-space: nowrap;
         font-size: $font-size-regular;

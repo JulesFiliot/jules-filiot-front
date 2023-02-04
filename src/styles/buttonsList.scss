@@ -1,6 +1,17 @@
+@use 'variables.scss' as *;
+
 .buttonsListContainer {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   row-gap: 20px;
+}
+
+@media (min-width: $sm-width) {
+  .buttonsListContainer {
+    .extendedButtonContainer {
+      width: 600px;
+    }
+  }
 }
