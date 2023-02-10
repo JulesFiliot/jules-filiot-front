@@ -1,10 +1,10 @@
-@use '../variables.scss' as *;
+@use "../variables.scss" as *;
 
 .panelContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-height: 350px;
+  min-height: 250px;
   width: 100%;
 
   .timeStampsList {
@@ -17,38 +17,44 @@
       height: 10px;
       width: auto;
     }
+
     &::-webkit-scrollbar-thumb {
-      background-color: #aaaaaa44;
+      background-color: #aaa4;
     }
+
     button {
       cursor: pointer;
-      padding: 7px 20px 7px 20px;
+      padding: 7px 20px;
       min-width: 120px;
       background-color: transparent;
       border: none;
       border-bottom: 1px #b1b1b1 solid;
-      transition: all 0.3s cubic-bezier(.17,.67,.83,.67);
+      transition: all 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+
+      span {
+        white-space: nowrap;
+        font-size: $font-size-regular;
+      }
 
       &.selected {
         border-bottom-color: $sub-color2;
       }
+
       &:hover {
         span {
           text-decoration: line-through;
           text-decoration-color: $sub-color2;
         }
       }
+
       &.selected:hover {
         span {
           text-decoration: none;
         }
       }
-      span {
-        white-space: nowrap;
-        font-size: $font-size-regular;
-      }
     }
   }
+
   .timeStampDetails {
     display: flex;
     flex-direction: column;
@@ -58,23 +64,25 @@
       text-transform: capitalize;
       font-size: $font-size-big;
     }
+
     .dates {
       font-size: $font-size-small;
     }
+
     .description {
       list-style-type: none;
-      padding-left: 0px;
-      
+      padding-left: 0;
+
       li {
         padding-left: 25px;
         margin-bottom: 10px;
         position: relative;
 
         &::before {
-          content: '';
+          content: "";
           display: inline-block;
           position: absolute;
-          left: 0px;
+          left: 0;
           border-bottom: 1px solid $sub-color2;
           width: 15px;
           margin-top: 13px;
@@ -87,14 +95,17 @@
 @media (min-width: $sm-width) {
   .panelContainer {
     align-items: center;
+
     .timeStampsList {
       justify-content: center;
     }
+
     .timeStampDetails {
       width: 500px;
     }
   }
 }
+
 @media (min-width: $lg-width) {
   .panelContainer {
     flex-direction: row;
@@ -113,16 +124,19 @@
         span {
           white-space: unset;
         }
+
         &.selected {
           border-left-color: $sub-color2;
         }
       }
     }
+
     .timeStampDetails {
-      margin-top: 0px;
+      margin-top: 0;
     }
   }
 }
+
 @media (min-width: $xl-width) {
   .panelContainer {
     .timeStampDetails {
@@ -130,6 +144,7 @@
     }
   }
 }
+
 @media (min-width: $xxl-width) {
   .panelContainer {
     .timeStampDetails {

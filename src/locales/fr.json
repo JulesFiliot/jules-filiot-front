@@ -10,6 +10,9 @@
       "fr": "FR",
       "en": "EN"
     },
+    "footer": {
+      "madeBy": "Designé et développé par Jules FILIOT"
+    },
     "home": {
       "fullView": {
         "mainMessage": "Bonjour, je suis Jules FILIOT !",
