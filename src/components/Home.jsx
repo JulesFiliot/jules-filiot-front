@@ -12,10 +12,6 @@ function Home() {
     <>
       <FullView />
       <Layout>
-        {/* <div>
-          <button type="button" onClick={() => i18n.changeLanguage('fr')}>FR</button>
-          <button type="button" onClick={() => i18n.changeLanguage('en')}>EN</button>
-        </div> */}
         <div className="section">
           <SmallTitle text="hi" marginBottom={20} left />
         </div>

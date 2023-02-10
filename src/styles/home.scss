@@ -1,8 +1,8 @@
-@use './variables.scss' as *;
+@use "./variables.scss" as *;
 
 .homeImage {
   width: 100vw;
   height: 350px;
   object-fit: cover;
-  margin: 0px -20px 0px -20px;
+  margin: 0 -20px;
 }
