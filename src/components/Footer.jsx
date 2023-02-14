@@ -8,7 +8,9 @@ function Footer() {
 
   return (
     <footer className="footer-container">
-      <p>{t('footer.madeBy')}</p>
+      <div className="text">
+        <p>{t('footer.madeBy')}</p>
+      </div>
     </footer>
   );
 }
