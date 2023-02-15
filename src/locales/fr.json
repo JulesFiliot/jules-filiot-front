@@ -23,7 +23,8 @@
       "resume": {
         "experience": "Expérience",
         "education": "Éducation",
-        "topSkills": "Principales compétences"
+        "topSkills": "Principales compétences",
+        "languages": "Langues"
       }
     }
   }

@@ -4,7 +4,7 @@ import '../styles/buttonsList.scss';
 import ExtendedButton from './UI/ExtendedButton';
 
 function ButtonsList({
-  data, uppercase, lowercase, capitalize, onClick,
+  data, uppercase, lowercase, capitalize, onClick, extended,
 }) {
   return (
     <div className="buttonsListContainer">
@@ -17,6 +17,7 @@ function ButtonsList({
           uppercase={uppercase}
           lowercase={lowercase}
           onClick={onClick}
+          extended={extended}
         />
       ))}
     </div>
@@ -32,12 +33,14 @@ ButtonsList.propTypes = {
   uppercase: PropTypes.bool,
   lowercase: PropTypes.bool,
   capitalize: PropTypes.bool,
+  extended: PropTypes.bool,
   onClick: PropTypes.func,
 };
 ButtonsList.defaultProps = {
   uppercase: false,
   lowercase: false,
   capitalize: false,
+  extended: false,
   onClick: null,
 };
 

@@ -26,7 +26,18 @@ function Resume() {
         />
       </div>
       <div className="section">
-        <SmallTitle text={t('home.resume.education')} marginBottom={20} right />
+        <SmallTitle text={t('home.resume.topSkills')} marginBottom={20} right />
+        <ButtonsList
+          capitalize
+          data={[
+            { id: 1, title: 'React', details: 'Refined react skills for over a year and a half' },
+            { id: 2, title: 'NestJS', details: 'Refined nestjs skills for over a year and a half Strong css knowledge with a many hours of experience. This text is very long for no reason, I just want to test my component so I have to write a very very veryyyyy long description to see how it behaves' },
+            { id: 3, title: 'css', details: 'Strong css knowledge with a many hours of experience. This text is very long for no reason, I just want to test my component so I have to write a very very veryyyyy long description to see how it behaves' },
+          ]}
+        />
+      </div>
+      <div className="section">
+        <SmallTitle text={t('home.resume.education')} marginBottom={20} left />
         <Panel
           title={['CPE Lyon', 'Institution des chartreux']}
           subtitle={['Graduate school of digital science', 'Preparation class for CPE Lyon']}
@@ -39,13 +50,16 @@ function Resume() {
         />
       </div>
       <div className="section">
-        <SmallTitle text={t('home.resume.topSkills')} marginBottom={20} left />
+        <SmallTitle text={t('home.resume.languages')} marginBottom={20} right />
         <ButtonsList
+          extended
           capitalize
           data={[
-            { id: 1, title: 'React', details: 'Refined react skills for over a year and a half' },
-            { id: 2, title: 'NestJS', details: 'Refined nestjs skills for over a year and a half Strong css knowledge with a many hours of experience. This text is very long for no reason, I just want to test my component so I have to write a very very veryyyyy long description to see how it behaves' },
-            { id: 3, title: 'css', details: 'Strong css knowledge with a many hours of experience. This text is very long for no reason, I just want to test my component so I have to write a very very veryyyyy long description to see how it behaves' },
+            { id: 1, title: 'French', details: 'Native' },
+            { id: 2, title: 'English', details: 'Full professional proficiency' },
+            { id: 3, title: 'German', details: 'Medium level' },
+            { id: 4, title: 'Russian', details: 'Elementary proficiency' },
+            { id: 5, title: 'Japanese', details: 'Elementary proficiency' },
           ]}
         />
       </div>

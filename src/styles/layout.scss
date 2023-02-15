@@ -8,6 +8,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 50px;
+
+    &.full {
+      height: calc(100vh - 102.5px - 101px);
+      margin-bottom: 0;
+    }
   }
 }
 

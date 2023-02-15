@@ -1,17 +1,32 @@
 @use "variables.scss" as *;
 
 .buttonsListContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
+
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // row-gap: 10px;
+
+  display: grid;
   row-gap: 10px;
+  justify-content: center;
 }
 
 @media (min-width: $sm-width) {
   .buttonsListContainer {
     .extendedButtonContainer {
       width: 600px;
+    }
+  }
+}
+
+@media (min-width: $lg-width) {
+  .buttonsListContainer {
+    // todo change grid to have two columns
+
+    .extendedButtonContainer {
+      width: 300px;
     }
   }
 }

@@ -4,9 +4,9 @@ import '../../styles/UI/extendedButton.scss';
 import Button from './Button';
 
 function ExtendedButton({
-  label, text, uppercase, lowercase, capitalize, onClick,
+  label, text, uppercase, lowercase, capitalize, onClick, extended,
 }) {
-  const [showText, setShowText] = useState(false);
+  const [showText, setShowText] = useState(extended);
 
   return (
     <div className="extendedButtonContainer">
@@ -19,7 +19,7 @@ function ExtendedButton({
           setShowText(!showText);
           if (onClick) onClick();
         }}
-        onBlur={() => setShowText(false)}
+        onBlur={!extended ? () => setShowText(false) : null}
       />
       <div
         className={`textContainer${showText ? ' displayed' : ''}`}
@@ -36,12 +36,14 @@ ExtendedButton.propTypes = {
   uppercase: PropTypes.bool,
   lowercase: PropTypes.bool,
   capitalize: PropTypes.bool,
+  extended: PropTypes.bool,
   onClick: PropTypes.func,
 };
 ExtendedButton.defaultProps = {
   uppercase: false,
   lowercase: false,
   capitalize: false,
+  extended: false,
   onClick: null,
 };
 

@@ -17,7 +17,7 @@ function FullView() {
       <Button
         capitalize
         label={t('home.fullView.buttonText')}
-        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+        onClick={() => window.scrollTo({ top: window.innerHeight + 10, behavior: 'smooth' })}
       />
     </div>
   );

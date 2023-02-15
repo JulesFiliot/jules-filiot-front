@@ -1,9 +1,9 @@
-@use '../variables.scss' as *;
+@use "../variables.scss" as *;
 
 .defaultButton {
   cursor: pointer;
   transition: all 0.2s ease;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 20px;
   background-color: $sub-color1;
   border: 1px solid;
   border-color: $main-color;
@@ -14,15 +14,28 @@
   &.uppercase {
     text-transform: uppercase;
   }
+
   &.lowercase {
     text-transform: lowercase;
   }
+
   &.capitalize {
     text-transform: capitalize;
   }
+
+  &.negative {
+    background-color: $main-color;
+    border-color: $sub-color1;
+    color: $sub-color1;
+  }
+
   &:hover {
     background-color: $main-color;
-    // border-color: $sub-color1;
     color: $sub-color1;
+
+    &.negative {
+      background-color: $sub-color1;
+      color: $main-color;
+    }
   }
 }
