@@ -8,6 +8,10 @@
   justify-content: center;
   align-items: center;
   color: $main-color;
+  text-shadow: -1px 0 $sub-color1, 0 1px $sub-color1, 1px 0 $sub-color1, 0 -1px $sub-color1;
+  background-image: url("../images/lyon_blackwhite.jpg");
+  background-size: cover;
+  background-position: center;
 
   ul {
     list-style-type: none;

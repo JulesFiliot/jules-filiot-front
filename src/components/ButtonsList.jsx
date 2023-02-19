@@ -9,16 +9,18 @@ function ButtonsList({
   return (
     <div className="buttonsListContainer">
       {data.map(({ id, title, details }) => (
-        <ExtendedButton
-          key={id}
-          label={title}
-          text={details}
-          capitalize={capitalize}
-          uppercase={uppercase}
-          lowercase={lowercase}
-          onClick={onClick}
-          extended={extended}
-        />
+        <div key={id} className="buttonListItem">
+          <ExtendedButton
+            key={id}
+            label={title}
+            text={details}
+            capitalize={capitalize}
+            uppercase={uppercase}
+            lowercase={lowercase}
+            onClick={onClick}
+            extended={extended}
+          />
+        </div>
       ))}
     </div>
   );
