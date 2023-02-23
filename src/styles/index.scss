@@ -1,38 +1,48 @@
-@use './variables.scss' as *;
+@use "./variables.scss" as *;
 
 @font-face {
-  font-family: 'RubikRegular';
-  src: local('RubikRegular'),
-  url('../fonts/Rubik/Rubik-Regular.ttf') format('truetype');
+  font-family: RubikRegular;
+  src:
+    local("RubikRegular"),
+    url("../fonts/Rubik/Rubik-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'RubikBold';
-  src: local('RubikBold'),
-  url('../fonts/Rubik/Rubik-Bold.ttf') format('truetype');
+  font-family: RubikBold;
+  src:
+    local("RubikBold"),
+    url("../fonts/Rubik/Rubik-Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'RubikItalic';
-  src: local('RubikItalic'),
-  url('../fonts/Rubik/Rubik-Italic.ttf') format('truetype');
+  font-family: RubikItalic;
+  src:
+    local("RubikItalic"),
+    url("../fonts/Rubik/Rubik-Italic.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'RubikBoldItalic';
-  src: local('RubikBoldItalic'),
-  url('../fonts/Rubik/Rubik-BoldItalic.ttf') format('truetype');
+  font-family: RubikBoldItalic;
+  src:
+    local("RubikBoldItalic"),
+    url("../fonts/Rubik/Rubik-BoldItalic.ttf") format("truetype");
 }
 
-body, span {
+body,
+span {
   margin: 0;
-  font-family: 'RubikRegular';
+  font-family: RubikRegular, sans-serif;
   font-size: $font-size-regular;
   overflow-x: hidden;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Courier New",
     monospace;
 }
 
@@ -40,11 +50,13 @@ code {
 ::-webkit-scrollbar {
   width: 12px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
-  background-color: #aaaaaa;
+  background-color: #aaa;
   border: 3px solid white;
   border-radius: 10px;
 }
