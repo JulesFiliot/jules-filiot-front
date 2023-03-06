@@ -11,17 +11,19 @@ function FullView() {
 
   return (
     <div className="fullView">
-      <h1 className="mainMessage">{t('home.fullView.mainMessage')}</h1>
-      <ul>
-        <li>{t('home.fullView.subMessage1')}</li>
-        <li>{t('home.fullView.subMessage2')}</li>
-      </ul>
-      <Button
-        capitalize
-        negative
-        label={t('home.fullView.buttonText')}
-        onClick={() => window.scrollTo({ top: window.innerHeight + 10, behavior: 'smooth' })}
-      />
+      <div className="content-container">
+        <h1 className="mainMessage">{t('home.fullView.mainMessage')}</h1>
+        <ul>
+          <li>{t('home.fullView.subMessage1')}</li>
+          <li>{t('home.fullView.subMessage2')}</li>
+        </ul>
+        <Button
+          capitalize
+          negative
+          label={t('home.fullView.buttonText')}
+          onClick={() => window.scrollTo({ top: window.innerHeight + 10, behavior: 'smooth' })}
+        />
+      </div>
     </div>
   );
 }

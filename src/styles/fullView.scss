@@ -3,37 +3,78 @@
 .fullView {
   height: 100vh;
   width: 100%;
+  color: $main-color;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: $main-color;
-  text-shadow: -1px 0 $sub-color1, 0 1px $sub-color1, 1px 0 $sub-color1, 0 -1px $sub-color1;
   background-image: url("../images/lyon_blackwhite.jpg");
   background-size: cover;
   background-position: center;
 
-  ul {
-    list-style-type: none;
-    padding-left: 0;
+  button {
+    margin-top: 50px;
+  }
 
-    li {
-      position: relative;
-      padding-left: 25px;
+  .content-container {
+    margin-top: 150px;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-      &::before {
-        content: "";
-        display: inline-block;
-        position: absolute;
-        left: 0;
-        border-bottom: 1px solid $sub-color2;
-        width: 15px;
-        margin-top: 13px;
+    ul {
+      margin: 0;
+      list-style-type: none;
+      padding-left: 0;
+
+      li {
+        position: relative;
+        padding-left: 25px;
+
+        &::before {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          left: 0;
+          border-bottom: 1px solid $sub-color2;
+          width: 15px;
+          margin-top: 13px;
+        }
       }
     }
   }
+}
 
-  button {
-    margin-top: 35px;
+@media (min-height: 750px) {
+  .fullView {
+    .content-container {
+      margin-top: 200px;
+    }
+  }
+}
+
+@media (min-height: 850px) {
+  .fullView {
+    .content-container {
+      margin-top: 230px;
+    }
+  }
+}
+
+@media (min-height: 950px) {
+  .fullView {
+    .content-container {
+      margin-top: 280px;
+    }
+  }
+}
+
+@media (min-height: 1080px) {
+  .fullView {
+    .content-container {
+      margin-top: 320px;
+    }
   }
 }
