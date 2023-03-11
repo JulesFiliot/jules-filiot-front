@@ -11,7 +11,7 @@ function FullViewLoader({ children }) {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setShowLoader(false);
-    }, 5000);
+    }, 2000);
 
     if (!data) {
       dispatch(fetchAllData());

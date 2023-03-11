@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
@@ -13,7 +14,7 @@ function Panel({
       <div className="timeStampsList">
         {title.map((t, index) => (
           <button
-            key={t}
+            key={`${t}-${index}`}
             type="button"
             className={selectedTitle === index ? 'selected' : ''}
             onClick={() => setSelectedTitle(index)}
@@ -30,7 +31,7 @@ function Panel({
         </span>
         {description[selectedTitle] && (
         <ul className="description">
-          {description[selectedTitle]?.map((d) => <li key={`${title[selectedTitle]}-${d}`}>{d}</li>)}
+          {description[selectedTitle]?.map((d, i) => <li key={`${d}-${i}`}>{d}</li>)}
         </ul>
         )}
       </div>

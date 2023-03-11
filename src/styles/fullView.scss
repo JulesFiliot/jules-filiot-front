@@ -17,12 +17,16 @@
   }
 
   .content-container {
-    margin-top: 150px;
+    margin-top: 115px;
     margin-bottom: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    .mainMessage {
+      text-align: center;
+    }
 
     ul {
       margin: 0;
@@ -50,7 +54,7 @@
 @media (min-height: 750px) {
   .fullView {
     .content-container {
-      margin-top: 200px;
+      margin-top: 160px;
     }
   }
 }
@@ -58,7 +62,7 @@
 @media (min-height: 850px) {
   .fullView {
     .content-container {
-      margin-top: 230px;
+      margin-top: 200px;
     }
   }
 }
@@ -66,7 +70,7 @@
 @media (min-height: 950px) {
   .fullView {
     .content-container {
-      margin-top: 280px;
+      margin-top: 250px;
     }
   }
 }

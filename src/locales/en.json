@@ -1,5 +1,8 @@
 {
   "translation": {
+    "general": {
+      "noData": "No data"
+    },
     "header": {
       "home": "home",
       "resume": "resume",
@@ -15,9 +18,7 @@
     },
     "home": {
       "fullView": {
-        "mainMessage": "Hello, I am Jules FILIOT!",
-        "subMessage1": "Pasionnated software engineer student",
-        "subMessage2": "Looking for an intership in Japan",
+        "mainMessage": "Hello, I am {{firstName}} {{lastName}}!",
         "buttonText": "Discover"
       },
       "resume": {
