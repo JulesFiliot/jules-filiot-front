@@ -10,6 +10,7 @@ import FullViewLoader from './components/FullViewLoader';
 import dataReducer from './reducers/dataReducer';
 import reportWebVitals from './reportWebVitals';
 import './i18n';
+import 'moment/locale/fr';
 
 import './fonts/Rubik/Rubik-Bold.ttf';
 import './fonts/Rubik/Rubik-BoldItalic.ttf';

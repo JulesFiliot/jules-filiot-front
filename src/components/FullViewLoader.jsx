@@ -5,7 +5,7 @@ import { fetchAllData } from '../actions/dataActions';
 
 function FullViewLoader({ children }) {
   const dispatch = useDispatch();
-  const { data, loading } = useSelector((state) => state);
+  const { data, loading, error } = useSelector((state) => state);
   const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
@@ -22,6 +22,9 @@ function FullViewLoader({ children }) {
     };
   }, [data]);
 
+  if (error) {
+    return <div>Error :(</div>;
+  }
   if (showLoader || loading || !data) {
     return <div>Loading...</div>;
   }

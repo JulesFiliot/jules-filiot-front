@@ -9,9 +9,9 @@ function Header() {
   const [showLangDropdown, setShowLangDropdown] = useState(false);
 
   const navItems = [
-    { label: t('header.home'), link: '/' },
+    { label: t('header.home'), link: '/home' },
     { label: t('header.resume'), link: '/resume' },
-    { label: t('header.contact'), link: '/' },
+    { label: t('header.contact'), link: '/reachme' },
   ];
   const languages = [
     { label: t('header.fr'), key: 'fr' },

@@ -27,6 +27,9 @@
         "topSkills": "Top skills",
         "languages": "Languages"
       }
+    },
+    "panel": {
+      "present": "Present"
     }
   }
 }

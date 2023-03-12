@@ -27,6 +27,9 @@
         "topSkills": "Principales compétences",
         "languages": "Langues"
       }
+    },
+    "panel": {
+      "present": "Présent"
     }
   }
 }

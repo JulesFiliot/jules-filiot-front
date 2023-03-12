@@ -4,7 +4,7 @@ import '../../styles/UI/extendedButton.scss';
 import Button from './Button';
 
 function ExtendedButton({
-  label, text, uppercase, lowercase, capitalize, onClick, extended,
+  label, text, uppercase, lowercase, capitalize, onClick, extended, centered,
 }) {
   const [showText, setShowText] = useState(extended);
 
@@ -22,7 +22,7 @@ function ExtendedButton({
         onBlur={!extended ? () => setShowText(false) : null}
       />
       <div
-        className={`textContainer${showText ? ' displayed' : ''}`}
+        className={`textContainer${showText ? ' displayed' : ''}${centered ? ' centered' : ''}`}
       >
         {text}
       </div>
@@ -37,6 +37,7 @@ ExtendedButton.propTypes = {
   lowercase: PropTypes.bool,
   capitalize: PropTypes.bool,
   extended: PropTypes.bool,
+  centered: PropTypes.bool,
   onClick: PropTypes.func,
 };
 ExtendedButton.defaultProps = {
@@ -44,6 +45,7 @@ ExtendedButton.defaultProps = {
   lowercase: false,
   capitalize: false,
   extended: false,
+  centered: false,
   onClick: null,
 };
 

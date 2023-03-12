@@ -8,44 +8,39 @@ import ButtonsList from './ButtonsList';
 
 function Resume() {
   const { t, i18n } = useTranslation();
+  const lang = i18n.language.toLowerCase();
   const { categories, panels } = useSelector((state) => state.data);
   const [dataToRenderLength, setDataToRenderLength] = useState(0);
 
-  const renderCategory = (cat) => {
-    const lang = i18n.language.toLowerCase();
-    return (
-      <div key={cat.id} className="section">
-        <SmallTitle text={cat.title[lang]} marginBottom={20} right />
-        <ButtonsList
-          extended={cat.extended}
-          capitalize
-          data={cat.skills?.map((skill) => ({
-            id: skill.id,
-            title: skill.title[lang],
-            details: skill.description[lang],
-          }))}
-        />
-      </div>
-    );
-  };
+  const renderCategory = (cat) => (
+    <div key={cat.id} className="section">
+      <SmallTitle text={cat.title[lang]} marginBottom={20} right />
+      <ButtonsList
+        extended={cat.extended}
+        capitalize
+        data={cat.skills?.map((skill) => ({
+          id: skill.id,
+          title: skill.title[lang],
+          details: skill.description[lang],
+        }))}
+      />
+    </div>
+  );
 
-  const renderPanel = (panel) => {
-    const lang = i18n.language.toLowerCase();
-    return (
-      <div key={panel.id} className="section">
-        <SmallTitle text={panel.title[lang]} marginBottom={20} left />
-        <Panel
-          title={panel.panelEntries?.map((entry) => entry.title[lang])}
-          subtitle={panel.panelEntries?.map((entry) => entry.subtitle[lang])}
-          startDate={panel.panelEntries?.map((entry) => entry.startDate)}
-          endDate={panel.panelEntries?.map((entry) => entry.endDate || 'Present')}
-          description={
+  const renderPanel = (panel) => (
+    <div key={panel.id} className="section">
+      <SmallTitle text={panel.title[lang]} marginBottom={20} left />
+      <Panel
+        title={panel.panelEntries?.map((entry) => entry.title[lang])}
+        subtitle={panel.panelEntries?.map((entry) => entry.subtitle[lang])}
+        startDate={panel.panelEntries?.map((entry) => entry.startDate)}
+        endDate={panel.panelEntries?.map((entry) => entry.endDate)}
+        description={
             panel.panelEntries?.map((entry) => entry.description.map((desc) => desc[lang]))
           }
-        />
-      </div>
-    );
-  };
+      />
+    </div>
+  );
 
   const renderData = () => {
     const dataToRender = [];
@@ -62,10 +57,11 @@ function Resume() {
         panelIndex += 1;
       } else {
         const currentCategory = categories[categoryIndex];
+        const isLanguageCat = currentCategory?.title?.en?.toLowerCase() === 'languages';
 
         dataToRender.push(renderCategory({
           ...currentCategory,
-          extended: !!currentCategory?.title?.en?.toLowerCase() === 'languages',
+          extended: isLanguageCat,
         }));
         categoryIndex += 1;
       }

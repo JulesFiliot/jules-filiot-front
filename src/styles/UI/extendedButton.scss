@@ -9,10 +9,16 @@
     margin-top: 10px;
     max-height: 0;
     transition: max-height 0.2s ease-out;
+    text-align: justify;
+    text-justify: inter-word;
 
     &.displayed {
       max-height: 500px;
       transition: max-height 0.5s ease-in;
+    }
+
+    &.centered {
+      text-align: center;
     }
   }
 }

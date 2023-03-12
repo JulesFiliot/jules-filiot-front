@@ -8,11 +8,11 @@ import Resume from './Resume';
 function Router() {
   return (
     <Routes>
-      <Route exact path="/" element={<Home />} />
+      <Route exact path="/home" element={<Home />} />
       <Route exact path="/resume" element={<Resume />} />
 
       {/* redirect wrong URLs to root */}
-      <Route path="*" element={<Navigate to="/" />} />
+      <Route path="*" element={<Navigate to="/home" />} />
     </Routes>
   );
 }

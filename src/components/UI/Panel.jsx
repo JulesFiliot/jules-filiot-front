@@ -1,33 +1,41 @@
 /* eslint-disable react/no-array-index-key */
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 import '../../styles/UI/panel.scss';
 
 function Panel({
   title, subtitle, startDate, endDate, description,
 }) {
+  const { i18n, t } = useTranslation();
+  const lang = i18n.language.toLowerCase();
   const [selectedTitle, setSelectedTitle] = useState(0);
 
   return (
     <div className="panelContainer">
       <div className="timeStampsList">
-        {title.map((t, index) => (
+        {title.map((ti, index) => (
           <button
-            key={`${t}-${index}`}
+            key={`${ti}-${index}`}
             type="button"
             className={selectedTitle === index ? 'selected' : ''}
             onClick={() => setSelectedTitle(index)}
           >
-            <span>{t}</span>
+            <span>{ti}</span>
           </button>
         ))}
       </div>
       <div className="timeStampDetails">
         <span className="subtitle">{subtitle[selectedTitle]}</span>
         <span className="dates">
-          {startDate[selectedTitle]}
-          {endDate[selectedTitle] && ` - ${endDate[selectedTitle]}`}
+          {moment(startDate[selectedTitle]).locale(lang).format('MMM YYYY')}
+          {
+            endDate[selectedTitle]
+              ? ` - ${`${moment(endDate[selectedTitle]).locale(lang).format('MMM YYYY')}`}`
+              : ` - ${t('panel.present')}`
+          }
         </span>
         {description[selectedTitle] && (
         <ul className="description">
