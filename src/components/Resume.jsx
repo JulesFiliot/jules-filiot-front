@@ -50,7 +50,8 @@ function Resume() {
     if (dataToRenderLength === 0) return (<p>{t('general.noData')}</p>);
 
     for (let i = 0; i < dataToRenderLength; i += 1) {
-      const isPanelToRender = typeof categories[categoryIndex] === 'undefined' || (i % 2 === 0 && typeof panels[panelIndex] !== 'undefined');
+      const isPanelToRender = typeof categories[categoryIndex] === 'undefined'
+        || (i % 2 === 0 && typeof panels[panelIndex] !== 'undefined');
 
       if (isPanelToRender) {
         dataToRender.push(renderPanel(panels[panelIndex]));

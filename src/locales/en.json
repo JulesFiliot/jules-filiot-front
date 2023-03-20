@@ -30,6 +30,9 @@
     },
     "panel": {
       "present": "Present"
+    },
+    "reachMe": {
+      "hook": "Ask chat gpt for a nice hook here"
     }
   }
 }

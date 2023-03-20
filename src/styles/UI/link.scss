@@ -1,0 +1,32 @@
+@use "../variables.scss" as *;
+
+.defaultButton {
+  border-color: $main-color;
+  font-family: $font-regular;
+  font-size: $font-size-regular;
+  color: $main-color;
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
+
+  &.lowercase {
+    text-transform: lowercase;
+  }
+
+  &.capitalize {
+    text-transform: capitalize;
+  }
+
+  &.negative {
+    color: $sub-color1;
+  }
+
+  &:hover {
+    color: $sub-color1;
+
+    &.negative {
+      color: $main-color;
+    }
+  }
+}

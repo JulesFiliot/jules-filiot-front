@@ -30,6 +30,9 @@
     },
     "panel": {
       "present": "Présent"
+    },
+    "reachMe": {
+      "hook": "Faire écrire à chat gpt un truc stylé"
     }
   }
 }

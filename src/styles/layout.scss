@@ -11,8 +11,12 @@
     margin-bottom: 50px;
 
     &.full {
-      min-height: calc(100vh - 102.5px - 101px);
+      min-height: calc(100vh - 102.5px - 101px - 10px);
       margin-bottom: 0;
+    }
+
+    &.left {
+      align-items: flex-start;
     }
   }
 }
