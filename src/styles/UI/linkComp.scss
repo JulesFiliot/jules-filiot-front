@@ -1,6 +1,12 @@
 @use "../variables.scss" as *;
 
-.defaultButton {
+.link-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.defaultLink {
   border-color: $main-color;
   font-family: $font-regular;
   font-size: $font-size-regular;
@@ -23,7 +29,8 @@
   }
 
   &:hover {
-    color: $sub-color1;
+    color: $sub-color2;
+    text-decoration: line-through;
 
     &.negative {
       color: $main-color;
