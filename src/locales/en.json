@@ -20,13 +20,10 @@
       "fullView": {
         "mainMessage": "Hello, I am {{firstName}} {{lastName}}!",
         "buttonText": "Discover"
-      },
-      "resume": {
-        "experience": "Experience",
-        "education": "Education",
-        "topSkills": "Top skills",
-        "languages": "Languages"
       }
+    },
+    "resume": {
+      "projects": "Projects"
     },
     "panel": {
       "present": "Present"

@@ -5,11 +5,14 @@ import Layout from './Layout';
 import SmallTitle from './UI/SmallTitle';
 import Panel from './UI/Panel';
 import ButtonsList from './ButtonsList';
+import ProjectDisplay from './UI/ProjectDisplay';
+
+import '../styles/resume.scss';
 
 function Resume() {
   const { t, i18n } = useTranslation();
   const lang = i18n.language.toLowerCase();
-  const { categories, panels } = useSelector((state) => state.data);
+  const { categories, panels, projects } = useSelector((state) => state.data);
   const [dataToRenderLength, setDataToRenderLength] = useState(0);
 
   const renderCategory = (cat) => (
@@ -36,10 +39,27 @@ function Resume() {
         startDate={panel.panelEntries?.map((entry) => entry.startDate)}
         endDate={panel.panelEntries?.map((entry) => entry.endDate)}
         description={
-            panel.panelEntries?.map((entry) => entry.description.map((desc) => desc[lang]))
-          }
+          panel.panelEntries?.map((entry) => entry.description.map((desc) => desc[lang]))
+        }
       />
     </div>
+  );
+
+  const renderProjectDisplay = (project) => (
+    <ProjectDisplay
+      key={project.id}
+      title={project.title[lang]}
+      description={project.description[lang]}
+      gitLink={project.gitLink ? {
+        title: project.gitLink.title[lang],
+        url: project.gitLink.url,
+      } : null}
+      otherLinks={project.usefulLinks.map((link) => ({
+        title: link.title[lang],
+        url: link.url,
+      }))}
+      customClass="resume-project"
+    />
   );
 
   const renderData = () => {
@@ -66,6 +86,16 @@ function Resume() {
         }));
         categoryIndex += 1;
       }
+    }
+
+    // add projects to render data
+    if (projects && projects.length) {
+      dataToRender.push(
+        <div className="section">
+          <SmallTitle text={t('resume.projects')} marginBottom={20} left />
+          {projects.map((proj) => renderProjectDisplay(proj))}
+        </div>,
+      );
     }
 
     return dataToRender;

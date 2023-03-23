@@ -1,0 +1,39 @@
+@use "../variables.scss" as *;
+
+.project-display-container {
+  height: fit-content;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  box-shadow: rgb(0 0 0 / 15%) 0 5px 15px 0;
+
+  .separator {
+    width: 50px;
+    border-bottom: 1px $sub-color2 solid;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  .project-links {
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: $sm-width) {
+  .project-display-container {
+    width: 500px;
+  }
+}
+
+@media (min-width: $xl-width) {
+  .project-display-container {
+    width: 650px;
+  }
+}
+
+@media (min-width: $xxl-width) {
+  .project-display-container {
+    width: 800px;
+  }
+}
