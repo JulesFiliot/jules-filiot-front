@@ -4,11 +4,8 @@ import { useSelector } from 'react-redux';
 import Layout from './Layout';
 import LinkComp from './UI/LinkComp';
 import Text from './UI/Text';
-import Image from './UI/Image';
 
 import '../styles/reachMe.scss';
-
-const codeLinesImg = require('../images/code_lines_bw_cropped.jpg');
 
 function ReachMe() {
   const { t, i18n } = useTranslation();
@@ -17,13 +14,13 @@ function ReachMe() {
 
   return (
     <Layout>
-      <div className="reach-me-container section full left">
+      <div className="reach-me-container section full">
         <div className="content">
           <Text text={t('reachMe.hook')} />
           <div className="links-container">
             {
             myInfo.email
-            && <LinkComp label={myInfo.email} url={`mailto:${myInfo.email}`} atIcon />
+            && <LinkComp label={myInfo.email} url={`mailto:${myInfo.email}`} />
           }
             {
             myInfo.linkedInLink
@@ -31,7 +28,6 @@ function ReachMe() {
           }
           </div>
         </div>
-        <Image src={codeLinesImg} alt="code lines black and white" customClass="illustration-img" />
       </div>
     </Layout>
   );

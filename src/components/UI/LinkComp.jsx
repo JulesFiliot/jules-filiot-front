@@ -7,23 +7,23 @@ import { ReactComponent as AtSvg } from '../../icons/at.svg';
 import '../../styles/UI/linkComp.scss';
 
 function LinkComp({
-  url, label, uppercase, lowercase, capitalize, negative, noIcon, atIcon,
+  url, label, uppercase, lowercase, capitalize, negative, linkIcon, atIcon,
 }) {
-  const [svg, setSvg] = useState(<LinkSvg />);
+  const [svg, setSvg] = useState(null);
 
   useEffect(() => {
-    if (noIcon) {
-      setSvg(null);
+    if (linkIcon) {
+      setSvg(<LinkSvg />);
     } else if (atIcon) {
       setSvg(<AtSvg />);
     } else {
-      setSvg(<LinkSvg />);
+      setSvg(null);
     }
-  }, [noIcon]);
+  }, [linkIcon, atIcon]);
 
   return (
     <div className="link-container">
-      <Icon svgSrc={svg} />
+      {svg && <Icon svgSrc={svg} />}
       <a
         className={`defaultLink${uppercase ? ' uppercase' : ''}${lowercase ? ' lowercase' : ''}${capitalize ? ' capitalize' : ''}${negative ? ' negative' : ''}`}
         href={url}
@@ -44,7 +44,7 @@ LinkComp.propTypes = {
   lowercase: PropTypes.bool,
   capitalize: PropTypes.bool,
   negative: PropTypes.bool,
-  noIcon: PropTypes.bool,
+  linkIcon: PropTypes.bool,
   atIcon: PropTypes.bool,
 };
 LinkComp.defaultProps = {
@@ -52,7 +52,7 @@ LinkComp.defaultProps = {
   lowercase: false,
   capitalize: false,
   negative: false,
-  noIcon: false,
+  linkIcon: false,
   atIcon: false,
 };
 
