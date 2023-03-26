@@ -28,6 +28,9 @@
     "panel": {
       "present": "Présent"
     },
+    "projectDisplay": {
+      "links": "Liens"
+    },
     "reachMe": {
       "hook": "Une question sur mes compétences ou mon expérience ? Ou peut-être avez-vous un projet sur lequel vous souhaitez collaborer ? Contactez-moi et réalisons-le !"
     }
