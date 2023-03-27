@@ -34,7 +34,7 @@ function Resume() {
     const sortedPanelEntries = panel?.panelEntries?.sort((a, b) => {
       const aDate = new Date(a.startDate);
       const bDate = new Date(b.startDate);
-      return aDate - bDate;
+      return bDate - aDate;
     });
 
     return (
