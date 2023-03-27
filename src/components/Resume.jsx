@@ -30,20 +30,28 @@ function Resume() {
     </div>
   );
 
-  const renderPanel = (panel) => (
-    <div key={panel.id} className="section">
-      <SmallTitle text={panel.title[lang]} marginBottom={20} left />
-      <Panel
-        title={panel.panelEntries?.map((entry) => entry.title[lang])}
-        subtitle={panel.panelEntries?.map((entry) => entry.subtitle[lang])}
-        startDate={panel.panelEntries?.map((entry) => entry.startDate)}
-        endDate={panel.panelEntries?.map((entry) => entry.endDate)}
-        description={
-          panel.panelEntries?.map((entry) => entry.description.map((desc) => desc[lang]))
+  const renderPanel = (panel) => {
+    const sortedPanelEntries = panel?.panelEntries?.sort((a, b) => {
+      const aDate = new Date(a.startDate);
+      const bDate = new Date(b.startDate);
+      return aDate - bDate;
+    });
+
+    return (
+      <div key={panel.id} className="section">
+        <SmallTitle text={panel.title[lang]} marginBottom={20} left />
+        <Panel
+          title={sortedPanelEntries?.map((entry) => entry.title[lang])}
+          subtitle={sortedPanelEntries?.map((entry) => entry.subtitle[lang])}
+          startDate={sortedPanelEntries?.map((entry) => entry.startDate)}
+          endDate={sortedPanelEntries?.map((entry) => entry.endDate)}
+          description={
+          sortedPanelEntries?.map((entry) => entry.description.map((desc) => desc[lang]))
         }
-      />
-    </div>
-  );
+        />
+      </div>
+    );
+  };
 
   const renderProjectDisplay = (project) => (
     <ProjectDisplay
