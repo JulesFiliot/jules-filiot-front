@@ -17,7 +17,7 @@ function ProjectDisplay({
         <div className="project-title">{title}</div>
         <div className="separator" />
         <div className="project-description">{description}</div>
-        <div className="project-tags">{tags || ['react', 'scss', 'api', 'python', 'nestjs', 'ci/cd', 'c#'].map((tag) => (<i>{tag}</i>))}</div>
+        {tags && tags.length && (<div className="project-tags">{tags.map((tag) => (<span>{tag?.toLowerCase()}</span>))}</div>)}
         <div className="project-links">
           {(gitLink || (otherLinks && otherLinks.length)) && (
             <>

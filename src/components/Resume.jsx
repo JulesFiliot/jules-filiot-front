@@ -58,6 +58,7 @@ function Resume() {
         title: link.title[lang],
         url: link.url,
       }))}
+      tags={project.tags}
       customClass="resume-project"
     />
   );

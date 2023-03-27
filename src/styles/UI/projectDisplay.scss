@@ -39,6 +39,11 @@
     flex-flow: row wrap;
     column-gap: 25px;
     margin-top: 20px;
+    text-transform: capitalize;
+
+    span {
+      color: $main-color-lighter;
+    }
   }
 
   &::before {
