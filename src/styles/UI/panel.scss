@@ -65,8 +65,13 @@
       font-size: $font-size-big;
     }
 
-    .dates {
+    .dates,
+    .location {
       font-size: $font-size-small;
+    }
+
+    .location {
+      text-transform: capitalize;
     }
 
     .description {

@@ -7,7 +7,7 @@ import moment from 'moment';
 import '../../styles/UI/panel.scss';
 
 function Panel({
-  title, subtitle, startDate, endDate, description,
+  title, subtitle, startDate, endDate, description, location,
 }) {
   const { i18n, t } = useTranslation();
   const lang = i18n.language.toLowerCase();
@@ -37,6 +37,7 @@ function Panel({
               : ` - ${t('panel.present')}`
           }
         </span>
+        <span className="location">{location[selectedTitle]}</span>
         {description[selectedTitle] && (
         <ul className="description">
           {description[selectedTitle]?.map((d, i) => <li key={`${d}-${i}`}>{d}</li>)}
@@ -53,12 +54,14 @@ Panel.propTypes = {
   startDate: PropTypes.arrayOf(PropTypes.string).isRequired,
   endDate: PropTypes.arrayOf(PropTypes.string),
   description: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
+  location: PropTypes.arrayOf(PropTypes.string),
 };
 
 Panel.defaultProps = {
   subtitle: [],
   endDate: [],
   description: [],
+  location: [],
 };
 
 export default Panel;

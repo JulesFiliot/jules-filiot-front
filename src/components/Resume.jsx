@@ -43,6 +43,10 @@ function Resume() {
         <Panel
           title={sortedPanelEntries?.map((entry) => entry.title[lang])}
           subtitle={sortedPanelEntries?.map((entry) => entry.subtitle[lang])}
+          location={sortedPanelEntries?.map((entry) => {
+            if (entry.location) return entry.location[lang];
+            return null;
+          })}
           startDate={sortedPanelEntries?.map((entry) => entry.startDate)}
           endDate={sortedPanelEntries?.map((entry) => entry.endDate)}
           description={

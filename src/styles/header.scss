@@ -9,11 +9,13 @@
 }
 
 .navContainer {
-  border: solid 1px $main-color;
+  border: solid 1px rgba($main-color, 0.2);
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: rgba($sub-color1, 0.8);
+  background-color: rgba($sub-color1, 0.2);
+  box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+  backdrop-filter: blur(5px);
 
   .nav {
     display: flex;
