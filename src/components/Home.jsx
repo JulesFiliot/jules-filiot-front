@@ -8,7 +8,7 @@ import Image from './UI/Image';
 
 import '../styles/home.scss';
 
-const codeLinesImg = require('../images/code_lines_bw_cropped.jpg');
+const meImg = require('../images/self-pic.jpg');
 
 function Home() {
   const { i18n } = useTranslation();
@@ -26,7 +26,7 @@ function Home() {
                 <Text key={`${info.en}-${i}`} text={info[i18n.language.toLowerCase()]} />
               ))}
             </div>
-            <Image src={codeLinesImg} alt="code lines black and white" customClass="illustration-img" />
+            <Image src={meImg} alt="code lines black and white" customClass="illustration-img" />
           </div>
         </div>
       </Layout>

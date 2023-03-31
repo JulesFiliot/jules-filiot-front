@@ -7,7 +7,9 @@
   display: flex;
   flex-direction: column;
   padding: 15px;
-  box-shadow: rgb(0 0 0 / 15%) 0 5px 15px 0;
+  box-shadow: 0 4px 30px rgba($main-color, 0.1);
+  background-color: rgba($sub-color1, 0.2);
+  backdrop-filter: blur(5px);
 
   .separator {
     width: 50px;

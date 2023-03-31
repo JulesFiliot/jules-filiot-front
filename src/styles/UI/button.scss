@@ -4,12 +4,13 @@
   cursor: pointer;
   transition: all 0.2s ease;
   padding: 10px 20px;
-  background-color: $sub-color1;
-  border: 1px solid;
-  border-color: $main-color;
   font-family: $font-regular;
   font-size: $font-size-regular;
   color: $main-color;
+  background: rgba($sub-color1, 0.2);
+  box-shadow: 0 4px 30px rgba($main-color, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba($main-color, 0.3);
 
   &.uppercase {
     text-transform: uppercase;
@@ -24,16 +25,18 @@
   }
 
   &.negative {
-    background-color: $main-color;
     color: $sub-color1;
+    background: rgba($main-color, 0.8);
+    border: 1px solid rgba($main-color, 0.3);
   }
 
   &:hover {
-    background-color: $main-color;
     color: $sub-color1;
+    background: rgba($main-color, 0.8);
+    border: 1px solid rgba($main-color, 0.3);
 
     &.negative {
-      background-color: $sub-color1;
+      background: rgba($sub-color1, 0.2);
       color: $main-color;
     }
   }
