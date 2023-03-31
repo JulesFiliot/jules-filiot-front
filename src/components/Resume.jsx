@@ -77,20 +77,28 @@ function Resume() {
 
   const renderData = () => {
     const dataToRender = [];
+    const sortedPanels = panels?.sort((a, b) => b.priority - a.priority);
+    const sortedProjects = projects?.sort((a, b) => b.priority - a.priority);
+    const sortedCategories = categories
+      ?.map((item) => ({
+        ...item,
+        skills: item.skills.slice().sort((a, b) => b.priority - a.priority),
+      }))
+      .sort((a, b) => b.priority - a.priority);
     let panelIndex = 0;
     let categoryIndex = 0;
 
     if (dataToRenderLength === 0) return (<p>{t('general.noData')}</p>);
 
     for (let i = 0; i < dataToRenderLength; i += 1) {
-      const isPanelToRender = typeof categories[categoryIndex] === 'undefined'
-        || (i % 2 === 0 && typeof panels[panelIndex] !== 'undefined');
+      const isPanelToRender = typeof sortedCategories[categoryIndex] === 'undefined'
+        || (i % 2 === 0 && typeof sortedPanels[panelIndex] !== 'undefined');
 
       if (isPanelToRender) {
-        dataToRender.push(renderPanel(panels[panelIndex]));
+        dataToRender.push(renderPanel(sortedPanels[panelIndex]));
         panelIndex += 1;
       } else {
-        const currentCategory = categories[categoryIndex];
+        const currentCategory = sortedCategories[categoryIndex];
         const isLanguageCat = currentCategory?.title?.en?.toLowerCase() === 'languages';
 
         dataToRender.push(renderCategory({
@@ -102,11 +110,11 @@ function Resume() {
     }
 
     // add projects to render data
-    if (projects && projects.length) {
+    if (sortedProjects && sortedProjects.length) {
       dataToRender.push(
         <div className="section">
           <SmallTitle text={t('resume.projects')} marginBottom={20} left />
-          {projects.map((proj) => renderProjectDisplay(proj))}
+          {sortedProjects.map((proj) => renderProjectDisplay(proj))}
         </div>,
       );
     }
