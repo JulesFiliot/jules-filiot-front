@@ -34,7 +34,8 @@
       margin-left: auto;
     }
 
-    &:hover {
+    &:hover,
+    &.active {
       span {
         text-decoration: line-through;
         text-decoration-color: $sub-color2;

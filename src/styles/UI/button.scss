@@ -10,7 +10,7 @@
   background: rgba($sub-color1, 0.2);
   box-shadow: 0 4px 30px rgba($main-color, 0.1);
   backdrop-filter: blur(5px);
-  border: 1px solid rgba($main-color, 0.3);
+  border: 1px solid rgba($main-color, 0.1);
 
   &.uppercase {
     text-transform: uppercase;
@@ -26,14 +26,14 @@
 
   &.negative {
     color: $sub-color1;
-    background: rgba($main-color, 0.8);
-    border: 1px solid rgba($main-color, 0.3);
+    background: rgba($main-color, 0.4);
+    border: 1px solid rgba($main-color, 0.1);
   }
 
   &:hover {
     color: $sub-color1;
-    background: rgba($main-color, 0.8);
-    border: 1px solid rgba($main-color, 0.3);
+    background: rgba($main-color, 0.4);
+    border: 1px solid rgba($main-color, 0.1);
 
     &.negative {
       background: rgba($sub-color1, 0.2);

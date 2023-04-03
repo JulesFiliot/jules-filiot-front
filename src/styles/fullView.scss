@@ -8,9 +8,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("../images/lyon_blackwhite.jpg");
-  background-size: cover;
-  background-position: center;
 
   button {
     margin-top: 50px;
@@ -63,17 +60,6 @@
   .fullView {
     .content-container {
       padding: 20px;
-
-      &::after {
-        content: "";
-        height: 20px;
-        width: 20px;
-        position: absolute;
-        top: -2px;
-        right: -2px;
-        border-right: 2px solid $sub-color2;
-        border-top: 2px solid $sub-color2;
-      }
 
       ul {
         width: 480px;

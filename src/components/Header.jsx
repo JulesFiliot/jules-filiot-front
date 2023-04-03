@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import '../styles/header.scss';
 
 function Header() {
   const { t, i18n } = useTranslation();
+  const location = useLocation();
   const navigate = useNavigate();
   const [showLangDropdown, setShowLangDropdown] = useState(false);
 
@@ -34,7 +35,7 @@ function Header() {
         navItems.map((item, i) => (
           <div
             key={`${item.label}`}
-            className={`navItem${i === 0 ? ' first' : ''}`}
+            className={`navItem${i === 0 ? ' first' : ''}${location.pathname === item.link ? ' active' : ''}`}
             onClick={() => redirect(item.link)}
             onKeyDown={() => redirect(item.link)}
             role="button"

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllData } from '../actions/dataActions';
 
+import '../styles/fullViewLoader.scss';
+
 function FullViewLoader({ children }) {
   const dispatch = useDispatch();
   const { data, loading, error } = useSelector((state) => state);
@@ -23,10 +25,10 @@ function FullViewLoader({ children }) {
   }, [data]);
 
   if (error) {
-    return <div>Error :(</div>;
+    return <div className="loader-container"><span>Error :(</span></div>;
   }
   if (showLoader || loading || !data) {
-    return <div>Loading...</div>;
+    return <div className="loader-container"><span>Loading...</span></div>;
   }
 
   return children;
