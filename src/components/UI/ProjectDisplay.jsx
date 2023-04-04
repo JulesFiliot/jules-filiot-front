@@ -17,7 +17,11 @@ function ProjectDisplay({
         <div className="project-title">{title}</div>
         <div className="separator" />
         <div className="project-description">{description}</div>
-        {tags && tags.length && (<div className="project-tags">{tags.map((tag) => (<span>{tag?.toLowerCase()}</span>))}</div>)}
+        {tags && tags.length && (
+          <div className="project-tags">
+            {tags.map((tag) => (<span key={`projdisp-${tag}-${title}`}>{tag?.toLowerCase()}</span>))}
+          </div>
+        )}
         <div className="project-links">
           {(gitLink || (otherLinks && otherLinks.length)) && (
             <>
@@ -27,7 +31,7 @@ function ProjectDisplay({
           )}
           {gitLink && <LinkComp label={gitLink.title} url={gitLink.url} />}
           {otherLinks && otherLinks.map((link) => (
-            <LinkComp key={`${link.title}-${link.url}`} label={link.title} url={link.url} />
+            <LinkComp key={`projdisplink-${link.title}-${link.url}`} label={link.title} url={link.url} />
           ))}
         </div>
       </div>

@@ -34,7 +34,7 @@ function Header() {
           {
         navItems.map((item, i) => (
           <div
-            key={`${item.label}`}
+            key={`${item.link}`}
             className={`navItem${i === 0 ? ' first' : ''}${location.pathname === item.link ? ' active' : ''}`}
             onClick={() => redirect(item.link)}
             onKeyDown={() => redirect(item.link)}

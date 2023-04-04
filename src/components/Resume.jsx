@@ -16,7 +16,7 @@ function Resume() {
   const [dataToRenderLength, setDataToRenderLength] = useState(0);
 
   const renderCategory = (cat) => (
-    <div key={cat.id} className="section">
+    <div key={`${cat.id}-category`} className="section">
       <SmallTitle text={cat.title[lang]} marginBottom={20} right />
       <ButtonsList
         extended={cat.extended}
@@ -38,7 +38,7 @@ function Resume() {
     });
 
     return (
-      <div key={panel.id} className="section">
+      <div key={`${panel.id}-panel`} className="section">
         <SmallTitle text={panel.title[lang]} marginBottom={20} left />
         <Panel
           title={sortedPanelEntries?.map((entry) => entry.title[lang])}
@@ -59,7 +59,7 @@ function Resume() {
 
   const renderProjectDisplay = (project) => (
     <ProjectDisplay
-      key={project.id}
+      key={`${project.id}-project`}
       title={project.title[lang]}
       description={project.description[lang]}
       gitLink={project.gitLink ? {
@@ -112,7 +112,7 @@ function Resume() {
     // add projects to render data
     if (sortedProjects && sortedProjects.length) {
       dataToRender.push(
-        <div className="section">
+        <div key="all-projects-container" className="section">
           <SmallTitle text={t('resume.projects')} marginBottom={20} left />
           {sortedProjects.map((proj) => renderProjectDisplay(proj))}
         </div>,

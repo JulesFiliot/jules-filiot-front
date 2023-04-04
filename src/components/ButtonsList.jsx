@@ -9,9 +9,8 @@ function ButtonsList({
   return (
     <div className="buttonsListContainer">
       {data.map(({ id, title, details }) => (
-        <div key={id} className="buttonListItem">
+        <div key={`${id}-buttonlist`} className="buttonListItem">
           <ExtendedButton
-            key={id}
             label={title}
             text={details}
             capitalize={capitalize}

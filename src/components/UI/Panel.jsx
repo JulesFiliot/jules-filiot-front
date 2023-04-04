@@ -18,7 +18,7 @@ function Panel({
       <div className="timeStampsList">
         {title.map((ti, index) => (
           <button
-            key={`${ti}-${index}`}
+            key={`${ti}-${index}-panelCont`}
             type="button"
             className={selectedTitle === index ? 'selected' : ''}
             onClick={() => setSelectedTitle(index)}
@@ -40,7 +40,7 @@ function Panel({
         <span className="location">{location[selectedTitle]}</span>
         {description[selectedTitle] && (
         <ul className="description">
-          {description[selectedTitle]?.map((d, i) => <li key={`${d}-${i}`}>{d}</li>)}
+          {description[selectedTitle]?.map((d, i) => <li key={`panelDesc-${d}-${i}`}>{d}</li>)}
         </ul>
         )}
       </div>
