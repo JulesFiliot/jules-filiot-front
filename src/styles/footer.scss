@@ -1,0 +1,15 @@
+@use "variables.scss" as *;
+
+.footer-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  border-top: solid 1px $main-color;
+  font-size: $font-size-small;
+
+  .text {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}

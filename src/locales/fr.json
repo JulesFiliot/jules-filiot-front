@@ -1,23 +1,38 @@
 {
   "translation": {
+    "general": {
+      "noData": "Pas de données"
+    },
     "header": {
       "home": "acceuil",
       "resume": "cv",
       "experience": "experience",
       "education": "éducation",
       "skills": "compétences",
-      "contact": "contact"
+      "contact": "contact",
+      "fr": "FR",
+      "en": "EN"
+    },
+    "footer": {
+      "madeBy": "Designé et développé par Jules FILIOT"
     },
     "home": {
       "fullView": {
-        "mainMessage": "Bonjour, je suis Jules FILIOT !",
-        "subMessage1": "Développeur logiciel passionné",
-        "subMessage2": "En recherche d'un stage de fin d'étude au Japon",
+        "mainMessage": "Bonjour, je suis {{firstName}} {{lastName}} !",
         "buttonText": "Découvrir"
-      },
-      "resume": {
-        "experience": "Expérience"
       }
+    },
+    "resume": {
+      "projects": "Projets"
+    },
+    "panel": {
+      "present": "Présent"
+    },
+    "projectDisplay": {
+      "links": "Liens"
+    },
+    "reachMe": {
+      "hook": "Une question sur mes compétences ou mon expérience ? Ou peut-être avez-vous un projet sur lequel vous souhaitez collaborer ? Contactez-moi et réalisons-le !"
     }
   }
 }

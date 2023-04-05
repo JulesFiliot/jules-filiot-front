@@ -1,0 +1,43 @@
+@use "../variables.scss" as *;
+
+.defaultButton {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 10px 20px;
+  font-family: $font-regular;
+  font-size: $font-size-regular;
+  color: $main-color;
+  background: rgba($sub-color1, 0.2);
+  box-shadow: 0 4px 30px rgba($main-color, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba($main-color, 0.1);
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
+
+  &.lowercase {
+    text-transform: lowercase;
+  }
+
+  &.capitalize {
+    text-transform: capitalize;
+  }
+
+  &.negative {
+    color: $sub-color1;
+    background: rgba($main-color, 0.4);
+    border: 1px solid rgba($main-color, 0.1);
+  }
+
+  &:hover {
+    color: $sub-color1;
+    background: rgba($main-color, 0.4);
+    border: 1px solid rgba($main-color, 0.1);
+
+    &.negative {
+      background: rgba($sub-color1, 0.2);
+      color: $main-color;
+    }
+  }
+}

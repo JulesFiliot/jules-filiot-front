@@ -1,0 +1,39 @@
+@use "../variables.scss" as *;
+
+.link-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.defaultLink {
+  border-color: $main-color;
+  font-family: $font-regular;
+  font-size: $font-size-regular;
+  color: $main-color;
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
+
+  &.lowercase {
+    text-transform: lowercase;
+  }
+
+  &.capitalize {
+    text-transform: capitalize;
+  }
+
+  &.negative {
+    color: $sub-color1;
+  }
+
+  &:hover {
+    color: $sub-color2;
+    text-decoration: line-through;
+
+    &.negative {
+      color: $main-color;
+    }
+  }
+}

@@ -1,8 +1,24 @@
-@use 'variables.scss' as *;
+@use "variables.scss" as *;
 
 .layoutContainer {
   margin-left: 10px;
   margin-right: 10px;
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+
+    &.full {
+      min-height: calc(100vh - 102.5px - 101px - 10px);
+      margin-bottom: 0;
+    }
+
+    &.left {
+      align-items: flex-start;
+    }
+  }
 }
 
 @media (min-width: $sm-width) {
@@ -11,24 +27,28 @@
     margin-right: 20px;
   }
 }
+
 @media (min-width: $md-width) {
   .layoutContainer {
     margin-left: 30px;
     margin-right: 30px;
   }
 }
+
 @media (min-width: $lg-width) {
   .layoutContainer {
     margin-left: 50px;
     margin-right: 50px;
   }
 }
+
 @media (min-width: $xl-width) {
   .layoutContainer {
     margin-left: 100px;
     margin-right: 100px;
   }
 }
+
 @media (min-width: $xxl-width) {
   .layoutContainer {
     margin-left: 150px;

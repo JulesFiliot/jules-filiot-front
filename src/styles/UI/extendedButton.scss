@@ -1,0 +1,24 @@
+.extendedButtonContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+
+  .textContainer {
+    width: 100%;
+    margin-top: 10px;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+    text-align: justify;
+    text-justify: inter-word;
+
+    &.displayed {
+      max-height: 500px;
+      transition: max-height 0.5s ease-in;
+    }
+
+    &.centered {
+      text-align: center;
+    }
+  }
+}

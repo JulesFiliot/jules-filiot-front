@@ -1,0 +1,31 @@
+@use "./variables.scss" as *;
+
+.reach-me-container {
+  .links-container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+
+    .link-container {
+      &::before {
+        content: "";
+        border-bottom: 1px solid $sub-color2;
+        width: 15px;
+        margin-top: 15px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+@media (min-width: $md-width) {
+  .reach-me-container {
+    .content {
+      .text-container {
+        width: 700px;
+      }
+    }
+  }
+}

@@ -1,8 +1,21 @@
-@use './variables.scss' as *;
+@use "./variables.scss" as *;
 
-.homeImage {
-  width: 100vw;
-  height: 350px;
-  object-fit: cover;
-  margin: 0px -20px 0px -20px;
+.home-container {
+  display: flex;
+  flex-direction: column;
+
+  .info-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: $md-width) {
+  .home-container {
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    column-gap: 30px;
+  }
 }

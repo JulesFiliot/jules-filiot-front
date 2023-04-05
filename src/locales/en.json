@@ -1,23 +1,38 @@
 {
   "translation": {
+    "general": {
+      "noData": "No data"
+    },
     "header": {
       "home": "home",
       "resume": "resume",
       "experience": "experience",
       "education": "education",
       "skills": "skills",
-      "contact": "reach me"
+      "contact": "reach me",
+      "fr": "FR",
+      "en": "EN"
+    },
+    "footer": {
+      "madeBy": "Designed and developed by Jules FILIOT"
     },
     "home": {
       "fullView": {
-        "mainMessage": "Hello, I am Jules FILIOT!",
-        "subMessage1": "Pasionnated software engineer student",
-        "subMessage2": "Looking for an intership in Japan",
+        "mainMessage": "Hello, I am {{firstName}} {{lastName}}!",
         "buttonText": "Discover"
-      },
-      "resume": {
-        "experience": "Experience"
       }
+    },
+    "resume": {
+      "projects": "Projects"
+    },
+    "panel": {
+      "present": "Present"
+    },
+    "projectDisplay": {
+      "links": "Links"
+    },
+    "reachMe": {
+      "hook": "Have a question about my skills or experience? Or perhaps you have a project you'd like to collaborate on? Get in touch with me and let's make it happen!"
     }
   }
 }

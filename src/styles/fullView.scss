@@ -1,9 +1,110 @@
+@use "./variables.scss" as *;
+
 .fullView {
   height: 100vh;
   width: 100%;
-
+  color: $main-color;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  button {
+    margin-top: 50px;
+  }
+
+  .content-container {
+    padding: 8px;
+    padding-bottom: 12px;
+    background-color: rgba($sub-color1, 0.2);
+    box-shadow: 0 4px 30px rgba($main-color, 0.1);
+    backdrop-filter: blur(5px);
+    margin-top: 115px;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .mainMessage {
+      text-align: center;
+    }
+
+    ul {
+      width: 350px;
+      margin: 0;
+      list-style-type: none;
+      padding-left: 0;
+
+      li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 6px;
+
+        &::before {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          left: 0;
+          border-bottom: 1px solid $sub-color2;
+          width: 15px;
+          margin-top: 13px;
+        }
+      }
+    }
+  }
+}
+
+// width media queries
+@media (min-width: $sm-width) {
+  .fullView {
+    .content-container {
+      padding: 20px;
+
+      ul {
+        width: 480px;
+      }
+    }
+  }
+}
+
+@media (min-width: $lg-width) {
+  .fullView {
+    .content-container {
+      padding: 30px;
+    }
+  }
+}
+
+// height media queries
+@media (min-height: 750px) {
+  .fullView {
+    .content-container {
+      margin-top: 160px;
+    }
+  }
+}
+
+@media (min-height: 850px) {
+  .fullView {
+    .content-container {
+      margin-top: 200px;
+    }
+  }
+}
+
+@media (min-height: 950px) {
+  .fullView {
+    .content-container {
+      margin-top: 250px;
+    }
+  }
+}
+
+@media (min-height: 1080px) {
+  .fullView {
+    .content-container {
+      margin-top: 320px;
+    }
+  }
 }

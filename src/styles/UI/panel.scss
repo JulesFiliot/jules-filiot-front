@@ -1,9 +1,11 @@
-@use '../variables.scss' as *;
+@use "../variables.scss" as *;
 
 .panelContainer {
   display: flex;
   flex-direction: column;
-  min-height: 350px;
+  align-items: flex-start;
+  min-height: fit-content;
+  width: 100%;
 
   .timeStampsList {
     width: 100%;
@@ -12,30 +14,48 @@
     overflow-x: auto;
 
     &::-webkit-scrollbar {
+      display: block;
       height: 10px;
       width: auto;
     }
+
     &::-webkit-scrollbar-thumb {
-      background-color: #aaaaaa44;
+      background-color: #aaa4;
     }
+
     button {
       cursor: pointer;
-      padding: 7px 20px 7px 20px;
-      min-width: 120px;
+      padding: 7px 20px;
+      min-width: fit-content;
       background-color: transparent;
       border: none;
-      border-bottom: 3px #b1b1b1 solid;
-      transition: all 0.3s cubic-bezier(.17,.67,.83,.67);
+      border-bottom: 1px #b1b1b1 solid;
+      transition: all 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
 
-      &.selected {
-        border-bottom-color: $sub-color2;
-      }
       span {
         white-space: nowrap;
         font-size: $font-size-regular;
       }
+
+      &.selected {
+        border-bottom-color: $sub-color2;
+      }
+
+      &:hover {
+        span {
+          text-decoration: line-through;
+          text-decoration-color: $sub-color2;
+        }
+      }
+
+      &.selected:hover {
+        span {
+          text-decoration: none;
+        }
+      }
     }
   }
+
   .timeStampDetails {
     display: flex;
     flex-direction: column;
@@ -45,24 +65,31 @@
       text-transform: capitalize;
       font-size: $font-size-big;
     }
-    .dates {
+
+    .dates,
+    .location {
       font-size: $font-size-small;
     }
+
+    .location {
+      text-transform: capitalize;
+    }
+
     .description {
       list-style-type: none;
-      padding-left: 0px;
-      
+      padding-left: 0;
+
       li {
         padding-left: 25px;
         margin-bottom: 10px;
         position: relative;
 
         &::before {
-          content: '';
+          content: "";
           display: inline-block;
           position: absolute;
-          left: 0px;
-          border-bottom: 2px solid $sub-color2;
+          left: 0;
+          border-bottom: 1px solid $sub-color2;
           width: 15px;
           margin-top: 13px;
         }
@@ -71,41 +98,64 @@
   }
 }
 
+@media (min-width: $sm-width) {
+  .panelContainer {
+    align-items: center;
+
+    .timeStampsList {
+      justify-content: center;
+    }
+
+    .timeStampDetails {
+      width: 500px;
+    }
+  }
+}
+
 @media (min-width: $lg-width) {
   .panelContainer {
     flex-direction: row;
+    align-items: unset;
+    justify-content: center;
 
     .timeStampsList {
       flex-direction: column;
+      justify-content: flex-start;
       width: 170px;
 
       button {
         border: none;
-        border-left: 3px #b1b1b1 solid;
+        border-left: 1px #b1b1b1 solid;
+        min-height: 40px;
+
+        span {
+          white-space: unset;
+        }
 
         &.selected {
           border-left-color: $sub-color2;
         }
       }
     }
+
     .timeStampDetails {
-      margin-top: 0px;
-      max-width: 400px;
-      width: 100%;
+      margin-top: 0;
     }
   }
 }
+
 @media (min-width: $xl-width) {
   .panelContainer {
     .timeStampDetails {
-      max-width: 570px;
+      width: 650px;
     }
   }
 }
+
 @media (min-width: $xxl-width) {
   .panelContainer {
     .timeStampDetails {
-      max-width: 650px;
+      width: 800px;
     }
   }
 }
