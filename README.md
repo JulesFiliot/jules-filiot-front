@@ -6,4 +6,4 @@ Jules
 
 ## About
 
-This project was fully made using [ReactJS](https://en.reactjs.org/) framework.
+This project was entirely developed using [ReactJS](https://en.reactjs.org/) framework.
