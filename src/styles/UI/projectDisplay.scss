@@ -35,6 +35,10 @@
     }
   }
 
+  .project-description {
+    text-align: justify;
+  }
+
   .project-tags {
     display: flex;
     justify-content: flex-start;
@@ -55,8 +59,8 @@
     position: absolute;
     bottom: -2px;
     left: -2px;
-    border-left: 2px solid $sub-color2;
-    border-bottom: 2px solid $sub-color2;
+    border-left: 2px solid rgba($sub-color2, 0.8);
+    border-bottom: 2px solid rgba($sub-color2, 0.8);
   }
 
   // &::after {

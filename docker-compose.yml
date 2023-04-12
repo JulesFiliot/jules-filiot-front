@@ -1,0 +1,17 @@
+version: "3"
+services:
+  react:
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    image: jules.filiot/react-front
+    environment: 
+      REACT_APP_API_BASEURL: ${REACT_APP_API_BASEURL}
+      PORT: ${PORT}
+      GENERATE_SOURCEMAP: ${GENERATE_SOURCEMAP}
+    ports: 
+      - "3001:3001" # expose-to-the-world : only-in-the-docker
+    container_name: jules-filiot-react-front
+    volumes: 
+      - .:/app
+      - /app/node_modules
