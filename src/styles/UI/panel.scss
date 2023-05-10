@@ -29,7 +29,7 @@
       min-width: fit-content;
       background-color: transparent;
       border: none;
-      border-bottom: 1px #b1b1b1 solid;
+      border-bottom: 2px #b1b1b173 solid;
       transition: all 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
 
       span {
@@ -43,8 +43,7 @@
 
       &:hover {
         span {
-          text-decoration: line-through;
-          text-decoration-color: $sub-color2;
+          color: $sub-color2;
         }
       }
 
@@ -89,7 +88,7 @@
           display: inline-block;
           position: absolute;
           left: 0;
-          border-bottom: 1px solid $sub-color2;
+          border-bottom: 2px solid $sub-color2;
           width: 15px;
           margin-top: 13px;
         }
@@ -125,7 +124,7 @@
 
       button {
         border: none;
-        border-left: 1px #b1b1b1 solid;
+        border-left: 2px #b1b1b173 solid;
         min-height: 40px;
 
         span {

@@ -55,6 +55,7 @@ function Header() {
             tabIndex={0}
           >
             <span>{item.label}</span>
+            <div className="underline" />
           </div>
         ))
       }
@@ -62,8 +63,8 @@ function Header() {
         <div
           key={i18n.language}
           className="navItem langBtn"
-          onClick={() => setShowLangDropdown(!showLangDropdown)}
-          onKeyDown={() => setShowLangDropdown(!showLangDropdown)}
+          onClick={() => { if (!showLangDropdown) setShowLangDropdown(true); }}
+          onKeyDown={() => { if (!showLangDropdown) setShowLangDropdown(true); }}
           role="button"
           tabIndex={0}
         >
@@ -80,7 +81,10 @@ function Header() {
             role="button"
             tabIndex={0}
           >
-            <span>{lang.label}</span>
+            <div className="content-container">
+              <span>{lang.label}</span>
+              <div className="underline" />
+            </div>
           </div>
         ))}
       </div>

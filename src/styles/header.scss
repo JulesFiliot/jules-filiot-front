@@ -6,6 +6,13 @@
   z-index: 10;
   margin-top: 10px;
   margin-bottom: 50px;
+
+  .underline {
+    width: 0;
+    height: 2px;
+    background-color: $sub-color2;
+    transition: width 0.3s;
+  }
 }
 
 .navContainer {
@@ -36,9 +43,8 @@
 
     &:hover,
     &.active {
-      span {
-        text-decoration: line-through;
-        text-decoration-color: $sub-color2;
+      .underline {
+        width: 100%;
       }
     }
   }
@@ -69,10 +75,14 @@
     justify-content: center;
     align-items: center;
 
+    .content-container {
+      display: flex;
+      flex-direction: column;
+    }
+
     &:hover {
-      span {
-        text-decoration: line-through;
-        text-decoration-color: $sub-color2;
+      .content-container .underline {
+        width: 100%;
       }
     }
   }
