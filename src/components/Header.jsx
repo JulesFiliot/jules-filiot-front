@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useLocation } from 'react-router-dom';
 import '../styles/header.scss';
@@ -8,6 +8,7 @@ function Header() {
   const location = useLocation();
   const navigate = useNavigate();
   const [showLangDropdown, setShowLangDropdown] = useState(false);
+  const dropdownRef = useRef(null);
 
   const navItems = [
     { label: t('header.home'), link: '/home' },
@@ -26,6 +27,18 @@ function Header() {
     }
     return navigate(redirectTo);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setShowLangDropdown(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [dropdownRef]);
 
   return (
     <div className="header-container">
@@ -57,13 +70,13 @@ function Header() {
           <span>{languages.find((l) => l.key === i18n.language).label}</span>
         </div>
       </nav>
-      <div className={`lang-dropdown-container${showLangDropdown ? ' displayed' : ''}`}>
+      <div ref={dropdownRef} className={`lang-dropdown-container${showLangDropdown ? ' displayed' : ''}`}>
         {languages.map((lang) => (
           <div
             key={lang.key}
             className="lang-dropdown-item"
-            onClick={() => i18n.changeLanguage(lang.key)}
-            onKeyDown={() => i18n.changeLanguage(lang.key)}
+            onClick={() => { i18n.changeLanguage(lang.key); setShowLangDropdown(false); }}
+            onKeyDown={() => { i18n.changeLanguage(lang.key); setShowLangDropdown(false); }}
             role="button"
             tabIndex={0}
           >
