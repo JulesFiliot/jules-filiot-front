@@ -1,16 +1,20 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import Button from './UI/Button';
+import { setHasFullView } from '../actions/dataActions';
+
 import '../styles/fullView.scss';
 
 // welcome view taking full screen on website load
 function FullView() {
+  const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
   const { myInfo } = useSelector((state) => state.data);
+  const hasFullView = useSelector((state) => state.hasFullView);
 
   return (
-    <div className="fullView">
+    <div className={`fullView${!hasFullView ? ' hidden' : ''}`}>
       <div className="content-container">
         <h1 className="mainMessage">
           {
@@ -28,7 +32,7 @@ function FullView() {
           capitalize
           negative
           label={t('home.fullView.buttonText')}
-          onClick={() => window.scrollTo({ top: window.innerHeight + 10, behavior: 'smooth' })}
+          onClick={() => dispatch(setHasFullView(false))}
         />
       </div>
     </div>

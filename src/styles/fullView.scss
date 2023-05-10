@@ -1,6 +1,10 @@
 @use "./variables.scss" as *;
 
 .fullView {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100vh;
   width: 100%;
   color: $main-color;
@@ -8,6 +12,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url("../images/gradient_wallpaper.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+
+  &.hidden {
+    display: none;
+  }
 
   button {
     margin-top: 50px;

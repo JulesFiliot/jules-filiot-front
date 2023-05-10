@@ -6,6 +6,7 @@ import { getAllProjects } from '../api/project';
 export const FETCH_ALL_DATA_REQUEST = 'FETCH_ALL_DATA_REQUEST';
 export const FETCH_ALL_DATA_SUCCESS = 'FETCH_ALL_DATA_SUCCESS';
 export const FETCH_ALL_DATA_FAILURE = 'FETCH_ALL_DATA_FAILURE';
+export const SET_HAS_FULL_VIEW = 'SET_HAS_FULL_VIEW';
 
 export const fetchAllDataRequest = () => ({ type: FETCH_ALL_DATA_REQUEST });
 export const fetchAllDataSuccess = (data) => ({ type: FETCH_ALL_DATA_SUCCESS, payload: data });
@@ -30,3 +31,5 @@ export const fetchAllData = () => async (dispatch) => {
     dispatch(fetchAllDataFailure(error));
   }
 };
+
+export const setHasFullView = (hasFullView) => ({ type: SET_HAS_FULL_VIEW, payload: hasFullView });
