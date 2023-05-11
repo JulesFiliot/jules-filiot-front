@@ -33,14 +33,29 @@ span {
   margin: 0;
   font-family: RubikRegular, sans-serif;
   font-size: $font-size-regular;
+  color: $font-color;
   overflow-x: hidden;
 }
 
 body {
-  background-image: url("../images/gradient_wallpaper.jpg");
-  background-size: cover;
-  background-position: center;
-  overflow: overlay;
+  // background
+  background: $background-color;
+  background-size: 200% 100%;
+  animation: argon-gradient 20s linear infinite;
+
+  @keyframes argon-gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 }
 
 code {

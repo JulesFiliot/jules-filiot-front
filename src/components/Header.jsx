@@ -9,6 +9,7 @@ function Header() {
   const navigate = useNavigate();
   const [showLangDropdown, setShowLangDropdown] = useState(false);
   const dropdownRef = useRef(null);
+  const langBtnRef = useRef(null);
 
   const navItems = [
     { label: t('header.home'), link: '/home' },
@@ -30,7 +31,10 @@ function Header() {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      if (dropdownRef.current
+        && !dropdownRef.current.contains(event.target)
+        && !langBtnRef.current.contains(event.target)
+      ) {
         setShowLangDropdown(false);
       }
     };
@@ -61,14 +65,16 @@ function Header() {
       }
         </div>
         <div
+          ref={langBtnRef}
           key={i18n.language}
           className="navItem langBtn"
-          onClick={() => { if (!showLangDropdown) setShowLangDropdown(true); }}
-          onKeyDown={() => { if (!showLangDropdown) setShowLangDropdown(true); }}
+          onClick={() => setShowLangDropdown(!showLangDropdown)}
+          onKeyDown={() => setShowLangDropdown(!showLangDropdown)}
           role="button"
           tabIndex={0}
         >
           <span>{languages.find((l) => l.key === i18n.language).label}</span>
+          <div className="underline" />
         </div>
       </nav>
       <div ref={dropdownRef} className={`lang-dropdown-container${showLangDropdown ? ' displayed' : ''}`}>
