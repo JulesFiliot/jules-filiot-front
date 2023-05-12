@@ -25,7 +25,7 @@ function Home() {
               <Text key={`${info.en}-${i}`} text={info[i18n.language.toLowerCase()]} />
             ))}
           </div>
-          <Image src={meImg} alt="my face" />
+          <Image src={meImg} alt="my face" customClass="self-pic" />
         </div>
       </div>
     </Layout>
