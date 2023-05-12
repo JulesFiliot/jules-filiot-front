@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import Button from './UI/Button';
 import { setHasFullView } from '../actions/dataActions';
+import Button from './UI/Button';
 
 import '../styles/fullView.scss';
 
@@ -12,9 +12,10 @@ function FullView() {
   const { t, i18n } = useTranslation();
   const { myInfo } = useSelector((state) => state.data);
   const hasFullView = useSelector((state) => state.hasFullView);
+  const [isAnimated, setIsAnimated] = useState(false);
 
   return (
-    <div className={`fullView${!hasFullView ? ' hidden' : ''}`}>
+    <div className={`fullView${isAnimated ? ' dive-in' : ''}${!hasFullView ? ' hidden' : ''}`}>
       <div className="content-container">
         <h1 className="mainMessage">
           {
@@ -32,7 +33,12 @@ function FullView() {
           capitalize
           negative
           label={t('home.fullView.buttonText')}
-          onClick={() => dispatch(setHasFullView(false))}
+          onClick={() => {
+            setIsAnimated(true);
+            setTimeout(() => {
+              dispatch(setHasFullView(false));
+            }, 1000);
+          }}
         />
       </div>
     </div>

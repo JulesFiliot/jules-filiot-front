@@ -33,11 +33,12 @@
     }
   }
 
-  &.hidden {
+  &.dive-in {
     opacity: 0;
-    animation: dive-in 1s ease-in-out forwards;
+    animation: dive-in-anime 1s ease-in-out forwards;
+    pointer-events: none;
 
-    @keyframes dive-in {
+    @keyframes dive-in-anime {
       0% {
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
@@ -48,6 +49,10 @@
         opacity: 0;
       }
     }
+  }
+
+  &.hidden {
+    display: none;
   }
 
   button {
