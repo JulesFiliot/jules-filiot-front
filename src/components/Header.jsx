@@ -77,7 +77,7 @@ function Header() {
           <div className="underline" />
         </div>
       </nav>
-      <div ref={dropdownRef} className={`lang-dropdown-container${showLangDropdown ? ' displayed' : ''}`}>
+      <div ref={dropdownRef} className={`lang-dropdown-container${showLangDropdown ? ' displayed' : ' hidden'}`}>
         {languages.map((lang) => (
           <div
             key={lang.key}

@@ -55,7 +55,7 @@
 }
 
 .lang-dropdown-container {
-  display: none;
+  display: flex;
   flex-direction: row;
   align-items: end;
   justify-content: center;
@@ -71,32 +71,39 @@
   background-color: rgba($sub-color1, 0.2);
   backdrop-filter: blur(5px);
 
-  // hide animation
-  animation-name: slide-out;
-  animation-duration: 0.5s;
+  &.hidden {
+    animation: slide-out 0.5s forwards;
 
-  @keyframes slide-out {
-    from {
-      transform: translateX(0); /* Start position */
-    }
+    @keyframes slide-out {
+      0% {
+        opacity: 1;
+        transform: translateX(0);
+      }
 
-    to {
-      transform: translateX(100%); /* Slide out to the right */
+      99% {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateX(0);
+      }
     }
   }
 
   &.displayed {
-    display: flex;
-    animation-name: slide-in;
-    animation-duration: 0.5s;
+    animation: slide-in 0.5s forwards;
 
     @keyframes slide-in {
       from {
-        transform: translateX(100%); /* Slide in from right */
+        opacity: 0;
+        transform: translateX(100%);
       }
 
       to {
-        transform: translateX(0); /* End position */
+        opacity: 1;
+        transform: translateX(0);
       }
     }
   }
