@@ -9,6 +9,13 @@
     display: flex;
     flex-direction: column;
   }
+
+  .self-pic {
+    .image {
+      object-fit: scale-down;
+      object-position: top;
+    }
+  }
 }
 
 @media (min-width: $md-width) {
