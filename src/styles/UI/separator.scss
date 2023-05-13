@@ -1,0 +1,14 @@
+@use "../variables.scss" as *;
+
+.separator-line {
+  height: 0;
+  width: 100%;
+  border-bottom: 1px solid $main-color;
+  margin: 40px 0;
+}
+
+@media (min-width: $sm-width) {
+  .separator-line {
+    display: none;
+  }
+}
