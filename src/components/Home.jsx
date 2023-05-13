@@ -15,20 +15,21 @@ function Home() {
   const { fullInfo } = useSelector((state) => state.data.myInfo);
 
   return (
-    <Layout>
-      <FullView />
-      <div className="full section">
-        <div className="home-container">
-          <div className="info-container">
-            {fullInfo.map((info, i) => (
+    <FullView>
+      <Layout>
+        <div className="full section">
+          <div className="home-container">
+            <div className="info-container">
+              {fullInfo.map((info, i) => (
               // eslint-disable-next-line react/no-array-index-key
-              <Text key={`${info.en}-${i}`} text={info[i18n.language.toLowerCase()]} />
-            ))}
+                <Text key={`${info.en}-${i}`} text={info[i18n.language.toLowerCase()]} />
+              ))}
+            </div>
+            <Image src={meImg} alt="my face" customClass="self-pic" />
           </div>
-          <Image src={meImg} alt="my face" customClass="self-pic" />
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </FullView>
   );
 }
 

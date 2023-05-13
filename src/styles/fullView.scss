@@ -105,6 +105,14 @@
   }
 }
 
+.content-to-reveil {
+  display: none;
+
+  &.is-shown {
+    display: block;
+  }
+}
+
 // width media queries
 @media (min-width: $sm-width) {
   .fullView {
