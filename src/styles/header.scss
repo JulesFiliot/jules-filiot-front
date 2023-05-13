@@ -55,9 +55,9 @@
 }
 
 .lang-dropdown-container {
-  display: flex;
+  display: none;
   flex-direction: row;
-  align-items: end;
+  align-items: flex-end;
   justify-content: center;
   position: absolute;
   top: 58px;
@@ -71,8 +71,9 @@
   background-color: rgba($sub-color1, 0.2);
   backdrop-filter: blur(5px);
 
-  &.hidden {
-    animation: slide-out 0.5s forwards;
+  &.hide-anime {
+    display: flex;
+    animation: slide-out 0.5s;
 
     @keyframes slide-out {
       0% {
@@ -80,19 +81,15 @@
         transform: translateX(0);
       }
 
-      99% {
-        opacity: 0;
-        transform: translateX(100%);
-      }
-
       100% {
         opacity: 0;
-        transform: translateX(0);
+        transform: translateX(100%);
       }
     }
   }
 
-  &.displayed {
+  &.display {
+    display: flex;
     animation: slide-in 0.5s forwards;
 
     @keyframes slide-in {

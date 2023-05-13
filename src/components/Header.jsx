@@ -8,6 +8,7 @@ function Header() {
   const location = useLocation();
   const navigate = useNavigate();
   const [showLangDropdown, setShowLangDropdown] = useState(false);
+  const [hideAnime, setHideAnime] = useState(false);
   const dropdownRef = useRef(null);
   const langBtnRef = useRef(null);
 
@@ -29,13 +30,21 @@ function Header() {
     return navigate(redirectTo);
   };
 
+  const displayHideAnime = () => {
+    setHideAnime(true);
+    setTimeout(() => setHideAnime(false), 500);
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current
         && !dropdownRef.current.contains(event.target)
         && !langBtnRef.current.contains(event.target)
       ) {
-        setShowLangDropdown(false);
+        if (showLangDropdown) {
+          setShowLangDropdown(false);
+          displayHideAnime();
+        }
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -68,8 +77,14 @@ function Header() {
           ref={langBtnRef}
           key={i18n.language}
           className="navItem langBtn"
-          onClick={() => setShowLangDropdown(!showLangDropdown)}
-          onKeyDown={() => setShowLangDropdown(!showLangDropdown)}
+          onClick={() => {
+            if (showLangDropdown) displayHideAnime();
+            setShowLangDropdown(!showLangDropdown);
+          }}
+          onKeyDown={() => {
+            if (showLangDropdown) displayHideAnime();
+            setShowLangDropdown(!showLangDropdown);
+          }}
           role="button"
           tabIndex={0}
         >
@@ -77,13 +92,20 @@ function Header() {
           <div className="underline" />
         </div>
       </nav>
-      <div ref={dropdownRef} className={`lang-dropdown-container${showLangDropdown ? ' displayed' : ' hidden'}`}>
+      <div
+        ref={dropdownRef}
+        className={`lang-dropdown-container${showLangDropdown ? ' display' : ''}${hideAnime ? ' hide-anime' : ''}`}
+      >
         {languages.map((lang) => (
           <div
             key={lang.key}
             className="lang-dropdown-item"
-            onClick={() => { i18n.changeLanguage(lang.key); setShowLangDropdown(false); }}
-            onKeyDown={() => { i18n.changeLanguage(lang.key); setShowLangDropdown(false); }}
+            onClick={() => {
+              i18n.changeLanguage(lang.key); setShowLangDropdown(false); displayHideAnime();
+            }}
+            onKeyDown={() => {
+              i18n.changeLanguage(lang.key); setShowLangDropdown(false); displayHideAnime();
+            }}
             role="button"
             tabIndex={0}
           >
