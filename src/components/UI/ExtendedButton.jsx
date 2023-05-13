@@ -19,7 +19,6 @@ function ExtendedButton({
           setShowText(!showText);
           if (onClick) onClick();
         }}
-        onBlur={!extended ? () => setShowText(false) : null}
       />
       <div
         className={`textContainer${showText ? ' displayed' : ''}${centered ? ' centered' : ''}`}
