@@ -42,8 +42,8 @@ function Header() {
         && !langBtnRef.current.contains(event.target)
       ) {
         if (showLangDropdown) {
-          setShowLangDropdown(false);
           displayHideAnime();
+          setShowLangDropdown(false);
         }
       }
     };
