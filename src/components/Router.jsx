@@ -1,5 +1,9 @@
-import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import {
+  Routes, Route, Navigate, useLocation,
+} from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { setHasFullView } from '../actions/dataActions';
 
 // components imports
 import Home from './Home';
@@ -7,6 +11,16 @@ import Resume from './Resume';
 import ReachMe from './ReachMe';
 
 function Router() {
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const hasFullView = useSelector((state) => state.hasFullView);
+
+  useEffect(() => {
+    if (hasFullView && location.pathname !== '/home') {
+      dispatch(setHasFullView(false));
+    }
+  }, [hasFullView, location]);
+
   return (
     <Routes>
       <Route exact path="/home" element={<Home />} />

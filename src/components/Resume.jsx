@@ -6,6 +6,7 @@ import SmallTitle from './UI/SmallTitle';
 import Panel from './UI/Panel';
 import ButtonsList from './ButtonsList';
 import ProjectDisplay from './UI/ProjectDisplay';
+import Separator from './UI/Separator';
 
 import '../styles/resume.scss';
 
@@ -16,18 +17,21 @@ function Resume() {
   const [dataToRenderLength, setDataToRenderLength] = useState(0);
 
   const renderCategory = (cat) => (
-    <div key={`${cat.id}-category`} className="section">
-      <SmallTitle text={cat.title[lang]} marginBottom={20} right />
-      <ButtonsList
-        extended={cat.extended}
-        capitalize
-        data={cat.skills?.map((skill) => ({
-          id: skill.id,
-          title: skill.title[lang],
-          details: skill.description[lang],
-        }))}
-      />
-    </div>
+    <>
+      <div key={`${cat.id}-category`} className="section">
+        <SmallTitle text={cat.title[lang]} marginBottom={20} right />
+        <ButtonsList
+          extended={cat.extended}
+          capitalize
+          data={cat.skills?.map((skill) => ({
+            id: skill.id,
+            title: skill.title[lang],
+            details: skill.description[lang],
+          }))}
+        />
+      </div>
+      <Separator />
+    </>
   );
 
   const renderPanel = (panel) => {
@@ -38,22 +42,25 @@ function Resume() {
     });
 
     return (
-      <div key={`${panel.id}-panel`} className="section">
-        <SmallTitle text={panel.title[lang]} marginBottom={20} left />
-        <Panel
-          title={sortedPanelEntries?.map((entry) => entry.title[lang])}
-          subtitle={sortedPanelEntries?.map((entry) => entry.subtitle[lang])}
-          location={sortedPanelEntries?.map((entry) => {
-            if (entry.location) return entry.location[lang];
-            return null;
-          })}
-          startDate={sortedPanelEntries?.map((entry) => entry.startDate)}
-          endDate={sortedPanelEntries?.map((entry) => entry.endDate)}
-          description={
+      <>
+        <div key={`${panel.id}-panel`} className="section">
+          <SmallTitle text={panel.title[lang]} marginBottom={20} left />
+          <Panel
+            title={sortedPanelEntries?.map((entry) => entry.title[lang])}
+            subtitle={sortedPanelEntries?.map((entry) => entry.subtitle[lang])}
+            location={sortedPanelEntries?.map((entry) => {
+              if (entry.location) return entry.location[lang];
+              return null;
+            })}
+            startDate={sortedPanelEntries?.map((entry) => entry.startDate)}
+            endDate={sortedPanelEntries?.map((entry) => entry.endDate)}
+            description={
           sortedPanelEntries?.map((entry) => entry.description.map((desc) => desc[lang]))
         }
-        />
-      </div>
+          />
+        </div>
+        <Separator />
+      </>
     );
   };
 

@@ -34,8 +34,8 @@ SmallTitle.propTypes = {
 };
 
 SmallTitle.defaultProps = {
-  textColor: '#000000',
-  color: '#000000',
+  textColor: '#1a1a1a',
+  color: '#1a1a1a',
   marginTop: '0px',
   marginBottom: '0px',
   left: false,

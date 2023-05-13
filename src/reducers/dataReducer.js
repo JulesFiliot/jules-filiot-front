@@ -2,12 +2,14 @@ import {
   FETCH_ALL_DATA_REQUEST,
   FETCH_ALL_DATA_SUCCESS,
   FETCH_ALL_DATA_FAILURE,
+  SET_HAS_FULL_VIEW,
 } from '../actions/dataActions';
 
 const initialState = {
   data: null,
   loading: false,
   error: null,
+  hasFullView: true,
 };
 
 // eslint-disable-next-line default-param-last
@@ -29,6 +31,11 @@ export default function dataReducer(state = initialState, action) {
         ...state,
         loading: false,
         error: action.payload,
+      };
+    case SET_HAS_FULL_VIEW:
+      return {
+        ...state,
+        hasFullView: action.payload,
       };
     default:
       return state;

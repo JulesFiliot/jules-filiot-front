@@ -6,12 +6,23 @@
   z-index: 10;
   margin-top: 10px;
   margin-bottom: 50px;
+
+  .underline {
+    width: 0;
+    height: 2px;
+    background-color: $sub-color2;
+    transition: width 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
 }
 
 .navContainer {
   width: 100%;
   display: flex;
   justify-content: center;
+
+  // glass effect
+  border-radius: 16px;
+  border: 1px solid rgba($sub-color1, 0.3);
   background-color: rgba($sub-color1, 0.2);
   box-shadow: 0 4px 30px rgba($main-color, 0.1);
   backdrop-filter: blur(5px);
@@ -36,9 +47,8 @@
 
     &:hover,
     &.active {
-      span {
-        text-decoration: line-through;
-        text-decoration-color: $sub-color2;
+      .underline {
+        width: 100%;
       }
     }
   }
@@ -46,21 +56,56 @@
 
 .lang-dropdown-container {
   display: none;
-  flex-direction: column;
-  align-items: end;
+  flex-direction: row;
+  align-items: flex-end;
   justify-content: center;
   position: absolute;
+  top: 58px;
+  right: 0;
   z-index: 10;
-  width: 100%;
 
-  &.displayed {
+  // glass effect
+  border-radius: 16px;
+  border: 1px solid rgba($sub-color1, 0.3);
+  box-shadow: 0 4px 30px rgba($main-color, 0.1);
+  background-color: rgba($sub-color1, 0.2);
+  backdrop-filter: blur(5px);
+
+  &.hide-anime {
     display: flex;
+    animation: slide-out 0.5s;
+
+    @keyframes slide-out {
+      0% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+    }
+  }
+
+  &.display {
+    display: flex;
+    animation: slide-in 0.5s forwards;
+
+    @keyframes slide-in {
+      from {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
   }
 
   .lang-dropdown-item {
-    box-shadow: 0 4px 30px rgba($main-color, 0.1);
-    background-color: rgba($sub-color1, 0.2);
-    backdrop-filter: blur(5px);
     cursor: pointer;
     padding: 15px;
     width: 20px;
@@ -69,10 +114,14 @@
     justify-content: center;
     align-items: center;
 
+    .content-container {
+      display: flex;
+      flex-direction: column;
+    }
+
     &:hover {
-      span {
-        text-decoration: line-through;
-        text-decoration-color: $sub-color2;
+      .content-container .underline {
+        width: 100%;
       }
     }
   }

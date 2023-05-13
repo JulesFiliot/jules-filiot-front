@@ -9,6 +9,13 @@
     display: flex;
     flex-direction: column;
   }
+
+  .self-pic {
+    .image {
+      object-fit: scale-down;
+      object-position: top;
+    }
+  }
 }
 
 @media (min-width: $md-width) {
@@ -17,5 +24,9 @@
     grid-auto-columns: minmax(0, 1fr);
     grid-auto-flow: column;
     column-gap: 30px;
+
+    .self-pic {
+      height: calc(100vh - 102.5px - 101px - 10px);
+    }
   }
 }

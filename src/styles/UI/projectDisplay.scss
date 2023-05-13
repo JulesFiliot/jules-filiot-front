@@ -7,13 +7,17 @@
   display: flex;
   flex-direction: column;
   padding: 15px;
+
+  // glass effect
+  border-radius: 10px;
   box-shadow: 0 4px 30px rgba($main-color, 0.1);
   background-color: rgba($sub-color1, 0.2);
   backdrop-filter: blur(5px);
+  border: 1px solid rgba($sub-color1, 0.3);
 
   .separator {
     width: 50px;
-    border-bottom: 1px $sub-color2 solid;
+    border-bottom: 2px $sub-color2 solid;
     margin-top: 10px;
     margin-bottom: 30px;
 
@@ -48,31 +52,9 @@
     text-transform: capitalize;
 
     span {
-      color: $main-color-lighter;
+      color: rgba($sub-color2, 0.75);
     }
   }
-
-  &::before {
-    content: "";
-    height: 30px;
-    width: 30px;
-    position: absolute;
-    bottom: -2px;
-    left: -2px;
-    border-left: 2px solid rgba($sub-color2, 0.8);
-    border-bottom: 2px solid rgba($sub-color2, 0.8);
-  }
-
-  // &::after {
-  //   content: "";
-  //   height: 20px;
-  //   width: 20px;
-  //   position: absolute;
-  //   top: -2px;
-  //   right: -2px;
-  //   border-right: 2px solid $sub-color2;
-  //   border-top: 2px solid $sub-color2;
-  // }
 }
 
 @media (min-width: $sm-width) {
