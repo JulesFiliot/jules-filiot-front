@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useLocation } from 'react-router-dom';
 import '../styles/header.scss';
@@ -9,8 +9,6 @@ function Header() {
   const navigate = useNavigate();
   const [showLangDropdown, setShowLangDropdown] = useState(false);
   const [hideAnime, setHideAnime] = useState(false);
-  const dropdownRef = useRef(null);
-  const langBtnRef = useRef(null);
 
   const navItems = [
     { label: t('header.home'), link: '/home' },
@@ -35,23 +33,12 @@ function Header() {
     setTimeout(() => setHideAnime(false), 500);
   };
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current
-        && !dropdownRef.current.contains(event.target)
-        && !langBtnRef.current.contains(event.target)
-      ) {
-        if (showLangDropdown) {
-          displayHideAnime();
-          setShowLangDropdown(false);
-        }
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [dropdownRef]);
+  const handleClickOutside = () => {
+    if (showLangDropdown) {
+      displayHideAnime();
+      setShowLangDropdown(false);
+    }
+  };
 
   return (
     <div className="header-container">
@@ -74,7 +61,6 @@ function Header() {
       }
         </div>
         <div
-          ref={langBtnRef}
           key={i18n.language}
           className="navItem langBtn"
           onClick={() => {
@@ -85,6 +71,7 @@ function Header() {
             if (showLangDropdown) displayHideAnime();
             setShowLangDropdown(!showLangDropdown);
           }}
+          onBlur={() => handleClickOutside()}
           role="button"
           tabIndex={0}
         >
@@ -93,19 +80,14 @@ function Header() {
         </div>
       </nav>
       <div
-        ref={dropdownRef}
         className={`lang-dropdown-container${showLangDropdown ? ' display' : ''}${hideAnime ? ' hide-anime' : ''}`}
       >
         {languages.map((lang) => (
           <div
             key={lang.key}
             className="lang-dropdown-item"
-            onClick={() => {
-              i18n.changeLanguage(lang.key); setShowLangDropdown(false); displayHideAnime();
-            }}
-            onKeyDown={() => {
-              i18n.changeLanguage(lang.key); setShowLangDropdown(false); displayHideAnime();
-            }}
+            onClick={() => i18n.changeLanguage(lang.key)}
+            onKeyDown={() => i18n.changeLanguage(lang.key)}
             role="button"
             tabIndex={0}
           >
