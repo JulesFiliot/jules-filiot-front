@@ -16,7 +16,7 @@ function Router() {
   const hasFullView = useSelector((state) => state.hasFullView);
 
   useEffect(() => {
-    if (hasFullView && location.pathname !== '/home') {
+    if (hasFullView && !['/', '/home'].includes(location.pathname)) {
       dispatch(setHasFullView(false));
     }
   }, [hasFullView, location]);
