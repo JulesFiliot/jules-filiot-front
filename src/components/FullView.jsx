@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import { setHasFullView } from '../actions/dataActions';
 import Button from './UI/Button';
 
+import applyTextStyle from '../utils/textProcessing';
+
 import '../styles/fullView.scss';
 
 // welcome view taking full screen on website load
@@ -28,7 +30,7 @@ function FullView({ children }) {
           </h1>
           <ul>
             {myInfo.sumUpInfo.map((info) => (
-              <li key={info.en}>{info[i18n.language.toLowerCase()]}</li>
+              <li key={info.en}>{applyTextStyle(info[i18n.language.toLowerCase()])}</li>
             ))}
           </ul>
           <Button
