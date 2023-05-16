@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import LinkComp from './LinkComp';
 import Image from './Image';
 
+import applyTextStyle from '../../utils/textProcessing';
+
 import '../../styles/UI/projectDisplay.scss';
 
 function ProjectDisplay({
@@ -16,7 +18,7 @@ function ProjectDisplay({
       <div className="content">
         <div className="project-title">{title}</div>
         <div className="separator" />
-        <div className="project-description">{description}</div>
+        <div className="project-description">{applyTextStyle(description)}</div>
         {tags && tags.length && (
           <div className="project-tags">
             {tags.map((tag) => (<span key={`projdisp-${tag}-${title}`}>{tag?.toLowerCase()}</span>))}

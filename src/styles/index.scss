@@ -72,6 +72,11 @@ code {
     monospace;
 }
 
+strong {
+  // font-weight: 700;
+  color: rgba($sub-color2, 0.75);
+}
+
 // better scrollbar
 ::-webkit-scrollbar {
   width: 12px;
