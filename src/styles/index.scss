@@ -41,9 +41,9 @@ body {
   // background
   background: $background-color;
   background-size: 200% 100%;
-  animation: argon-gradient 20s linear infinite;
+  animation: moving-gradient 20s linear infinite;
 
-  @keyframes argon-gradient {
+  @keyframes moving-gradient {
     0% {
       background-position: 0% 50%;
     }
@@ -59,7 +59,7 @@ body {
 }
 
 html {
-  background-color: rgb(176	115	179);
+  background-color: $fallback-bg-color;
 }
 
 code {
