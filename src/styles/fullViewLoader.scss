@@ -9,4 +9,15 @@
   justify-content: center;
   overflow: hidden;
   position: relative;
+
+  .loader-text {
+    margin-top: 20px;
+    font-size: $font-size-small;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: $sub-color2;
+      cursor: default;
+    }
+  }
 }

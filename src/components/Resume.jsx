@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 import Layout from './Layout';
 import SmallTitle from './UI/SmallTitle';
 import Panel from './UI/Panel';
@@ -13,6 +14,10 @@ import '../styles/resume.scss';
 function Resume() {
   const { t, i18n } = useTranslation();
   const lang = i18n.language.toLowerCase();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const scrollTo = queryParams.get('scrollTo');
+  const projectSectionRef = useRef(null);
   const { categories, panels, projects } = useSelector((state) => state.data);
   const [dataToRenderLength, setDataToRenderLength] = useState(0);
 
@@ -119,7 +124,7 @@ function Resume() {
     // add projects to render data
     if (sortedProjects && sortedProjects.length) {
       dataToRender.push(
-        <div key="all-projects-container" className="section">
+        <div key="all-projects-container" className="section" ref={projectSectionRef}>
           <SmallTitle text={t('resume.projects')} marginBottom={20} left />
           {sortedProjects.map((proj) => renderProjectDisplay(proj))}
         </div>,
@@ -129,9 +134,19 @@ function Resume() {
     return dataToRender;
   };
 
+  const scrollToProjects = () => {
+    if (scrollTo === 'projects' && projectSectionRef.current) {
+      projectSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     setDataToRenderLength(categories.length + panels.length);
   }, [categories, panels]);
+
+  useEffect(() => {
+    scrollToProjects();
+  }, [projectSectionRef.current, scrollTo, dataToRenderLength]);
 
   return (
     <Layout>{renderData()}</Layout>

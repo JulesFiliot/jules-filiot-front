@@ -19,7 +19,8 @@
     "home": {
       "fullView": {
         "mainMessage": "Bonjour, je suis {{firstName}} {{lastName}} !",
-        "buttonText": "Découvrir"
+        "buttonText": "Découvrir",
+        "seeMyProjects": "Voir mes projets"
       }
     },
     "resume": {

@@ -26,6 +26,10 @@ function ReachMe() {
             myInfo.linkedInLink
             && <LinkComp label={myInfo.linkedInLink.title[lang]} url={myInfo.linkedInLink.url} />
           }
+            {
+            myInfo.gitLink
+            && <LinkComp label={myInfo.gitLink.title[lang]} url={myInfo.gitLink.url} />
+          }
           </div>
         </div>
       </div>

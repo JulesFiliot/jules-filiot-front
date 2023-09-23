@@ -1,0 +1,22 @@
+@use "../variables.scss" as *;
+
+$loader-color: $main-color;
+$loader-color-hover: $sub-color2;
+$loader-width: 2em;
+$loader-height: 2em;
+
+svg {
+  width: $loader-width;
+  height: $loader-height;
+
+  circle {
+    fill: $loader-color;
+    transition: fill 0.3s ease-in-out;
+  }
+
+  &:hover {
+    circle {
+      fill: #33ff57;
+    }
+  }
+}
