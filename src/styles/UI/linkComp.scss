@@ -28,6 +28,10 @@
     color: $sub-color1;
   }
 
+  &.highlighted {
+    color: $accented-color;
+  }
+
   &:hover {
     color: $sub-color2;
 
