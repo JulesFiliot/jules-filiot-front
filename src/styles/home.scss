@@ -11,6 +11,8 @@
   }
 
   .self-pic {
+    margin-top: 30px;
+
     .image {
       object-fit: scale-down;
       object-position: top;
@@ -26,6 +28,7 @@
     column-gap: 30px;
 
     .self-pic {
+      margin-top: 0;
       height: calc(100vh - 102.5px - 101px - 10px);
     }
   }
