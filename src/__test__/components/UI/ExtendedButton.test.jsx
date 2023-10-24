@@ -3,18 +3,18 @@ import { render, fireEvent, screen } from '@testing-library/react';
 import ExtendedButton from '../../../components/UI/ExtendedButton';
 
 describe('ExtendedButton', () => {
-  it('should toggles text visibility on button click', async () => {
+  it('should toggle text visibility on button click', async () => {
     render(<ExtendedButton label="Toggle" text="Hello World" />);
 
     const textContainer = screen.getByTestId('textContainerTest');
-    expect(textContainer.classList.contains('displayed')).toBe(false);
+    expect(textContainer).not.toHaveClass('displayed');
 
     const button = screen.getByRole('button', { name: 'Toggle' });
     fireEvent.mouseDown(button);
-    expect(textContainer.classList.contains('displayed')).toBe(true);
+    expect(textContainer).toHaveClass('displayed');
   });
 
-  it('should calls onClick handler when button is clicked', () => {
+  it('should call onClick handler when button is clicked', () => {
     const onClickMock = jest.fn();
     render(<ExtendedButton label="Toggle" text="Hello World" onClick={onClickMock} />);
 
@@ -26,10 +26,10 @@ describe('ExtendedButton', () => {
   it('should initially show text if extended prop is true', () => {
     render(<ExtendedButton label="Toggle" text="Hello World" extended />);
     const textContainer = screen.getByTestId('textContainerTest');
-    expect(textContainer.classList.contains('displayed')).toBe(true);
+    expect(textContainer).toHaveClass('displayed');
 
     const button = screen.getByRole('button', { name: 'Toggle' });
     fireEvent.mouseDown(button);
-    expect(textContainer.classList.contains('displayed')).toBe(false);
+    expect(textContainer).not.toHaveClass('displayed');
   });
 });
