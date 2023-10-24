@@ -24,10 +24,19 @@ jobs:
 
   deploy:
     name: Deploy to Cloudflare Pages
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev'
     needs: test
     runs-on: ubuntu-latest
 
     steps:
-      - name: Trigger Cloudflare Pages 
-        run: curl -X POST ${{ secrets.DEPLOY_HOOK_JEST_TESTS }}
+      - name: Set Deploy Hook Based on Branch
+        id: set_hook
+        run: |
+          if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            echo "::set-output name=deploy_hook::${{ secrets.DEPLOY_HOOK_MASTER }}"
+          elif [[ "${{ github.ref }}" == "refs/heads/dev" ]]; then
+            echo "::set-output name=deploy_hook::${{ secrets.DEPLOY_HOOK_DEV }}"
+          fi
 
+      - name: Trigger Cloudflare Pages 
+        run: curl -X POST ${{ steps.set_hook.outputs.deploy_hook }}
