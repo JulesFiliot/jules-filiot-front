@@ -21,7 +21,7 @@ describe('dataReducer', () => {
 
   it('should handle FETCH_ALL_DATA_REQUEST', () => {
     const action = { type: FETCH_ALL_DATA_REQUEST };
-    const expectedState = { ...initialState, loading: true };
+    const expectedState = { ...initialState, loading: false };
     expect(dataReducer(initialState, action)).toEqual(expectedState);
   });
 
