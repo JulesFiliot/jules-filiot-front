@@ -21,6 +21,7 @@ function ExtendedButton({
         }}
       />
       <div
+        data-testid="textContainerTest"
         className={`textContainer${showText ? ' displayed' : ''}${centered ? ' centered' : ''}`}
       >
         {text}
