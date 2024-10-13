@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 import Layout from './Layout';
 import FullView from './FullView';
 import Text from './UI/Text';
@@ -25,7 +26,7 @@ function Home() {
               // eslint-disable-next-line react/no-array-index-key
                 <Text key={`${info.en}-${i}`} text={info[i18n.language.toLowerCase()]} />
               ))}
-              <Link className="defaultLink" to="/resume?scrollTo=projects">{`> ${t('home.fullView.seeMyProjects')}`}</Link>
+              <Link className="defaultLink" to="/projects">{`> ${t('home.fullView.seeMyProjects')}`}</Link>
             </div>
             <Image src={meImg} alt="my face" customClass="self-pic" />
           </div>

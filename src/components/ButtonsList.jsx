@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/buttonsList.scss';
+
 import ExtendedButton from './UI/ExtendedButton';
+
+import '../styles/buttonsList.scss';
 
 function ButtonsList({
   data, uppercase, lowercase, capitalize, onClick, extended, centered,
