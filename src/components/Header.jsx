@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useLocation } from 'react-router-dom';
+
 import '../styles/header.scss';
 
 function Header() {
@@ -12,7 +13,7 @@ function Header() {
 
   const navItems = [
     { label: t('header.home'), link: '/home' },
-    { label: t('header.resume'), link: '/resume' },
+    { label: t('header.projects'), link: '/projects' },
     { label: t('header.contact'), link: '/reachme' },
   ];
   const languages = [
@@ -38,6 +39,11 @@ function Header() {
       displayHideAnime();
       setShowLangDropdown(false);
     }
+  };
+
+  const changeLanguage = (langKey) => {
+    i18n.changeLanguage(langKey);
+    setShowLangDropdown(false);
   };
 
   return (
@@ -86,8 +92,8 @@ function Header() {
           <div
             key={lang.key}
             className="lang-dropdown-item"
-            onClick={() => i18n.changeLanguage(lang.key)}
-            onKeyDown={() => i18n.changeLanguage(lang.key)}
+            onClick={() => changeLanguage(lang.key)}
+            onKeyDown={(e) => e.key === 'Enter' && changeLanguage(lang.key)}
             role="button"
             tabIndex={0}
           >

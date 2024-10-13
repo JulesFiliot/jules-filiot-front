@@ -1,36 +1,37 @@
 {
   "translation": {
+    "footer": {
+      "madeBy": "Designed and developed by Jules FILIOT"
+    },
     "general": {
       "noData": "No data"
     },
     "header": {
-      "home": "home",
-      "resume": "resume",
-      "experience": "experience",
-      "education": "education",
-      "skills": "skills",
       "contact": "reach me",
+      "education": "education",
+      "en": "EN",
+      "experience": "experience",
       "fr": "FR",
-      "en": "EN"
-    },
-    "footer": {
-      "madeBy": "Designed and developed by Jules FILIOT"
+      "home": "home",
+      "projects": "projects",
+      "skills": "skills"
     },
     "home": {
       "fullView": {
-        "mainMessage": "Hello, I am {{firstName}} {{lastName}}!",
         "buttonText": "Discover",
+        "mainMessage": "Hello, I am {{firstName}} {{lastName}}!",
         "seeMyProjects": "See my projects"
       }
-    },
-    "resume": {
-      "projects": "Projects"
     },
     "panel": {
       "present": "Present"
     },
     "projectDisplay": {
       "links": "Links"
+    },
+    "projects": {
+      "description": "Here are some of my personal projects.",
+      "projects": "Projects"
     },
     "reachMe": {
       "hook": "Have a question about my skills or experience? Or perhaps you have a project you'd like to collaborate on? Get in touch with me and let's make it happen!"

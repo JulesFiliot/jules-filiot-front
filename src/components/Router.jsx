@@ -3,11 +3,11 @@ import {
   Routes, Route, Navigate, useLocation,
 } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { setHasFullView } from '../actions/dataActions';
 
+import { setHasFullView } from '../actions/dataActions';
 // components imports
 import Home from './Home';
-import Resume from './Resume';
+import Projects from './Projects';
 import ReachMe from './ReachMe';
 
 function Router() {
@@ -24,7 +24,7 @@ function Router() {
   return (
     <Routes>
       <Route exact path="/home" element={<Home />} />
-      <Route exact path="/resume" element={<Resume />} />
+      <Route exact path="/projects" element={<Projects />} />
       <Route exact path="/reachme" element={<ReachMe />} />
 
       {/* redirect wrong URLs to root */}

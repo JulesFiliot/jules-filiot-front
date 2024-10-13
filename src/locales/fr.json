@@ -1,36 +1,37 @@
 {
   "translation": {
+    "footer": {
+      "madeBy": "Designé et développé par Jules FILIOT"
+    },
     "general": {
       "noData": "Pas de données"
     },
     "header": {
-      "home": "accueil",
-      "resume": "cv",
-      "experience": "experience",
-      "education": "éducation",
-      "skills": "compétences",
       "contact": "contact",
+      "education": "éducation",
+      "en": "EN",
+      "experience": "expérience",
       "fr": "FR",
-      "en": "EN"
-    },
-    "footer": {
-      "madeBy": "Designé et développé par Jules FILIOT"
+      "home": "accueil",
+      "projects": "projets",
+      "skills": "compétences"
     },
     "home": {
       "fullView": {
-        "mainMessage": "Bonjour, je suis {{firstName}} {{lastName}} !",
         "buttonText": "Découvrir",
+        "mainMessage": "Bonjour, je suis {{firstName}} {{lastName}} !",
         "seeMyProjects": "Voir mes projets"
       }
-    },
-    "resume": {
-      "projects": "Projets"
     },
     "panel": {
       "present": "Présent"
     },
     "projectDisplay": {
       "links": "Liens"
+    },
+    "projects": {
+      "description": "Voici quelques-uns de mes projets personnels.",
+      "projects": "Projets"
     },
     "reachMe": {
       "hook": "Une question sur mes compétences ou mon expérience ? Ou peut-être avez-vous un projet sur lequel vous souhaitez collaborer ? Contactez-moi et réalisons-le !"
