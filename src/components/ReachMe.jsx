@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+
 import Layout from './Layout';
 import LinkComp from './UI/LinkComp';
 import Text from './UI/Text';

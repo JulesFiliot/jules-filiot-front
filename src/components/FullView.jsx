@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
-import { setHasFullView } from '../actions/dataActions';
-import Button from './UI/Button';
 
+import { setHasFullView } from '../actions/dataActions';
 import applyTextStyle from '../utils/textProcessing';
+import Button from './UI/Button';
 
 import '../styles/fullView.scss';
 
